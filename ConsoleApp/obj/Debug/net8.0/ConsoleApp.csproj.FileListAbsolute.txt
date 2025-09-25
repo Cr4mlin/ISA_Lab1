@@ -18,3 +18,4 @@ C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\refint\ConsoleAp
 C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.pdb
 C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.genruntimeconfig.cache
 C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ref\ConsoleApp.dll
+C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.sourcelink.json

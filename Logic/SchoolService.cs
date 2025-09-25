@@ -1,5 +1,4 @@
 ﻿using System.Text.RegularExpressions;
-using System.Text;
 using Model;
 
 namespace Logic
@@ -11,7 +10,7 @@ namespace Logic
         /// <summary>
         /// Валидация имени преподавателя
         /// </summary>
-        /// <param name="teacherName"></param>
+        /// <param name="teacherName">Имя преподавателя</param>
         /// <returns>Значение true если имя проходит проверку, иначе false</returns>
         private bool IsValidTeacherName(string teacherName)
         {
@@ -35,7 +34,7 @@ namespace Logic
         /// <summary>
         /// Валидация состояния курса
         /// </summary>
-        /// <param name="teacherName"></param>
+        /// <param name="status">Состояние(активен или нет)</param>
         /// <returns>Значение true если статус проходит проверку, иначе false</returns>
         public bool IsValidIsActive(string status)
         {
@@ -50,20 +49,20 @@ namespace Logic
         }
 
         /// <summary>
-        /// Функция для создания курса (сущности)
+        /// Создаёт курс с заданными параметрами.
         /// </summary>
-        /// <param name="courseName"></param>
-        /// <param name="descripton"></param>
-        /// <param name="courseId"></param>
-        /// <param name="duration"></param>
-        /// <param name="price"></param>
-        /// <param name="teacher"></param>
-        /// <param name="status"></param>
-        /// <exception cref="CourseIdExistsException"></exception>
-        /// <exception cref="InvalidPriceException"></exception>
-        /// <exception cref="InvalidDurationException"></exception>
-        /// <exception cref="InvalidTeacherNameException"></exception>
-        /// <exception cref="InvalidIsActiveException"></exception>
+        /// <param name="courseName">Название курса</param>
+        /// <param name="descripton">Описание курса</param>
+        /// <param name="courseId">ID курса</param>
+        /// <param name="duration">Длительность курса</param>
+        /// <param name="price">Стоимость курса</param>
+        /// <param name="teacher">Имя преподавателя</param>
+        /// <param name="status">Состояние курса</param>
+        /// <exception cref="CourseIdExistsException">Выбрасывается при дублировании кода курса</exception>
+        /// <exception cref="InvalidPriceException">Выбрасывается при отрицательном значении цены</exception>
+        /// <exception cref="InvalidDurationException">Выбрасывается при отрицательном значении продолжительности</exception>
+        /// <exception cref="InvalidTeacherNameException">Выбрасывается при невозможном имени преподавателя</exception>
+        /// <exception cref="InvalidIsActiveException">Выбрасывается при неверном указании состояния</exception>
         public Course CreateCourse(string courseName, string descripton, string courseId,
                                    int duration, decimal price, string teacher, string status)
         {
@@ -115,27 +114,27 @@ namespace Logic
         /// <summary>
         /// Функция для изменения существующего курса (сущности)
         /// </summary>
-        /// <param name="oldId"></param>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
-        /// <param name="id"></param>
-        /// <param name="duration"></param>
-        /// <param name="price"></param>
-        /// <param name="teacher"></param>
-        /// <param name="status"></param>
-        /// <exception cref="CourseIdExistsException"></exception>
-        /// <exception cref="InvalidPriceException"></exception>
-        /// <exception cref="InvalidDurationException"></exception>
-        /// <exception cref="InvalidTeacherNameException"></exception>
-        /// <exception cref="InvalidIsActiveException"></exception>
-        public Course UpdateCourse(string oldId, string name, string description, string id,
+        /// <param name="oldId">Старое ID курса</param>
+        /// <param name="courseName">Название курса</param>
+        /// <param name="description">Описание курса</param>
+        /// <param name="courseId">ID курса</param>
+        /// <param name="duration">Длительность курса</param>
+        /// <param name="price">Стоимость курса</param>
+        /// <param name="teacher">Имя преподавателя</param>
+        /// <param name="status">Состояние курса</param>
+        /// <exception cref="CourseIdExistsException">Выбрасывается при дублировании кода курса</exception>
+        /// <exception cref="InvalidPriceException">Выбрасывается при отрицательном значении цены</exception>
+        /// <exception cref="InvalidDurationException">Выбрасывается при отрицательном значении продолжительности</exception>
+        /// <exception cref="InvalidTeacherNameException">Выбрасывается при невозможном имени преподавателя</exception>
+        /// <exception cref="InvalidIsActiveException">Выбрасывается при неверном указании состояния</exception>
+        public Course UpdateCourse(string oldId, string courseName, string description, string courseId,
                                   int duration, decimal price, string teacher, string status)
         {
             var existingCourse = GetCourseById(oldId);
 
             bool isActive = true;
 
-            if (_courses.Any(c => c.CourseId.Equals(id, StringComparison.OrdinalIgnoreCase)))
+            if (_courses.Any(c => c.CourseId.Equals(courseId, StringComparison.OrdinalIgnoreCase)))
             {
                 throw new CourseIdExistsException(existingCourse.CourseId);
             }
@@ -163,8 +162,8 @@ namespace Logic
             if (status == "да") { isActive = true; }
             if (status == "нет") { isActive = false; }
 
-            existingCourse.CourseName = name;
-            existingCourse.CourseId = id;
+            existingCourse.CourseName = courseName;
+            existingCourse.CourseId = courseId;
             existingCourse.Description = description;
             existingCourse.Duration = duration;
             existingCourse.Price = price;
@@ -175,13 +174,13 @@ namespace Logic
         }
 
         /// <summary>
-        /// Функция для удаления курса
+        /// Удаляет курс
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="courseId">ID курса</param>
         /// <returns>Если курс удалён, то возвращает true, иначе false</returns>
-        public bool DeleteCourse(string id)
+        public bool DeleteCourse(string courseId)
         {
-            var courseToRemove = GetCourseById(id);
+            var courseToRemove = GetCourseById(courseId);
             if (courseToRemove != null)
             {
                 return _courses.Remove(courseToRemove);
@@ -192,17 +191,17 @@ namespace Logic
         /// <summary>
         /// Возвращает список всех курсов
         /// </summary>
-        /// <returns>string</returns>
+        /// <returns>List<Course></returns>
         public List<Course> GetAllCourses() => new List<Course>(_courses);
 
         /// <summary>
         /// Возвращает курс с таким же ID, какое было передано в функцию
         /// </summary>
         /// <returns>Course</returns>
-        public Course GetCourseById(string id)
+        public Course GetCourseById(string courseId)
         {
-            return _courses.FirstOrDefault(c => c.CourseId == id)
-                    ?? throw new CourseNotFoundException(id);
+            return _courses.FirstOrDefault(c => c.CourseId == courseId)
+                    ?? throw new CourseNotFoundException(courseId);
         }
 
         /// <summary>
@@ -218,7 +217,7 @@ namespace Logic
         /// <summary>
         /// Возвращает список всех курсов входящих в указанный ценовой диапазон
         /// </summary>
-        /// <returns>string</returns>
+        /// <returns>List<Course></returns>
         public List<Course> GetCoursesInPriceRange(decimal minPrice, decimal maxPrice)
         {
             if (minPrice < 0 || maxPrice < 0 || minPrice > maxPrice)
@@ -233,10 +232,10 @@ namespace Logic
         /// <summary>
         /// Функция для переключения состояния курса
         /// </summary>
-        /// <param name="id">ID курса</param>
-        public void ToggleCourseStatus(string id)
+        /// <param name="courseId">ID курса</param>
+        public void ToggleCourseStatus(string courseId)
         {
-            var course = GetCourseById(id);
+            var course = GetCourseById(courseId);
             course.IsActive = !course.IsActive;
         }
     }

@@ -10,9 +10,15 @@
         public decimal Price { get; set; }
         public string Teacher { get; set; } = string.Empty;
         public bool IsActive { get; set; } = true;
+
+        /// <summary>
+        /// Переопределяет вывод сущности (Добавлено на всякий случай)
+        /// </summary>
+        /// <returns>string</returns>
         public override string ToString()
         {
-            return $"ID: {CourseId}, Название: {CourseName} (Преп.: {Teacher}, Дл.: {Duration} ч., Стоимость: {Price} руб., Активен: {IsActive})";
+            string courseStatus = IsActive ? "Да" : "Нет";
+            return $"ID: {CourseId}, Название: {CourseName} (Преп.: {Teacher}, Дл.: {Duration} ч., Стоимость: {Price} руб., Активен: {courseStatus})";
         }
     }
 }

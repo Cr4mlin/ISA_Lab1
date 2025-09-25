@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Logic;
+﻿using Logic;
 
 namespace ConsoleApp
 {
@@ -36,43 +31,44 @@ namespace ConsoleApp
         /// <summary>
         /// Функция для создания курса через консоль
         /// </summary>
-        /// <param name="schoolService"></param>
         public void CreateCourse()
         {
-            Console.WriteLine("---СОЗДАНИЕ НОВОГО КУРСА---");
+            Console.Clear();
+            Console.WriteLine("---СОЗДАНИЕ НОВОГО КУРСА---\n");
 
             try
             {
                 Console.Write("Название курса: ");
-                string name = Console.ReadLine();
+                string courseName = Console.ReadLine();
 
                 Console.Write("Описание: ");
-                string description = Console.ReadLine();
+                string courseDescription = Console.ReadLine();
 
                 Console.Write("ID курса: ");
-                string id = Console.ReadLine();
+                string courseId = Console.ReadLine();
 
                 Console.Write("Длительность (часов): ");
-                if (!int.TryParse(Console.ReadLine(), out int duration))
+                if (!int.TryParse(Console.ReadLine(), out int courseDuration))
                 {
                     Console.WriteLine("Необходимо вводить число");
                     return;
                 }
 
                 Console.Write("Стоимость: ");
-                if (!decimal.TryParse(Console.ReadLine(), out decimal price))
+                if (!decimal.TryParse(Console.ReadLine(), out decimal coursePrice))
                 {
                     Console.WriteLine("Необходимо вводить число");
                     return;
                 }
 
                 Console.Write("Преподаватель: ");
-                string teacher = Console.ReadLine();
+                string teacherName = Console.ReadLine();
 
                 Console.Write("Активный(Да/Нет): ");
-                string status = Console.ReadLine().ToLower();
+                string courseStatus = Console.ReadLine().ToLower();
 
-                var course = _schoolService.CreateCourse(name, description, id, duration, price, teacher, status);
+                var course = _schoolService.CreateCourse(courseName, courseDescription, courseId, 
+                    courseDuration, coursePrice, teacherName, courseStatus);
                 Console.WriteLine($"Курс создан успешно");
                 Console.WriteLine(course);
             }
@@ -105,29 +101,36 @@ namespace ConsoleApp
         /// <summary>
         /// Функция для отображения всех курсов в консоли
         /// </summary>
-        /// <param name="schoolService"></param>
         public void ShowAllCourses()
         {
             Console.Clear();
-            Console.WriteLine("---ВСЕ КУРСЫ---");
+            Console.WriteLine("---ВСЕ КУРСЫ---\n");
 
             var courses = _schoolService.GetAllCourses();
-            Console.WriteLine(courses);
+
+            if (courses.Count == 0)
+            {
+                Console.WriteLine("Курсов нет.");
+                return;
+            }
+
+            foreach (var course in courses)
+            {
+                Console.WriteLine(course);
+            }
         }
 
         /// <summary>
         /// Функция для отображения в консоли найденного курса
         /// </summary>
-        /// <param name="schoolService"></param>
         public void FindCourseById()
         {
             Console.Clear();
-            Console.WriteLine("---ПОИСК КУРСА ПО ID---");
+            Console.WriteLine("---ПОИСК КУРСА ПО ID---\n");
 
             var courses = _schoolService.GetAllCourses();
-            Console.WriteLine(courses);
 
-            if (courses == null) 
+            if (courses.Count == 0) 
             {
                 Console.WriteLine("Курсов нет.");
                 return; 
@@ -135,11 +138,11 @@ namespace ConsoleApp
 
             Console.WriteLine("Введите ID курса:");
 
-            string id = Console.ReadLine();
+            string courseId = Console.ReadLine();
 
             try
             {
-                var course = _schoolService.GetCourseById(id);
+                var course = _schoolService.GetCourseById(courseId);
                 Console.WriteLine($"Найденный курс: {course}");
             }
             catch (CourseNotFoundException ex)
@@ -151,59 +154,63 @@ namespace ConsoleApp
         /// <summary>
         /// Функция для обновления курса через консоль
         /// </summary>
-        /// <param name="schoolService"></param>
         public void UpdateCourse()
         {
             Console.Clear();
-            Console.WriteLine("---ОБНОВЛЕНИЕ ДАННЫХ О КУРСЕ---");
+            Console.WriteLine("---ОБНОВЛЕНИЕ ДАННЫХ О КУРСЕ---\n");
 
             var courses = _schoolService.GetAllCourses();
-            Console.WriteLine(courses);
 
-            if (courses == null) 
+            if (courses.Count == 0) 
             {
                 Console.WriteLine("Курсов нет");
                 return; 
             } //Проверка наличия курсов
 
+            foreach (var course in courses)
+            {
+                Console.WriteLine(course);
+            }
+
             Console.WriteLine("Введите ID курса, который хотите обновить: ");
-            string id = Console.ReadLine();
+            string oldCourseId = Console.ReadLine();
 
             try
             {
-                var excisitingCourse = _schoolService.GetCourseById(id);
+                var excisitingCourse = _schoolService.GetCourseById(oldCourseId);
                 Console.WriteLine($"Текущие данные: {excisitingCourse}");
 
                 Console.Write("Название курса: ");
-                string newName = Console.ReadLine();
+                string newCourseName = Console.ReadLine();
 
                 Console.Write("Описание: ");
-                string newDescription = Console.ReadLine();
+                string newCourseDescription = Console.ReadLine();
 
                 Console.Write("ID курса: ");
-                string newId = Console.ReadLine();
+                string newCourseId = Console.ReadLine();
 
                 Console.Write("Длительность (часов): ");
-                if (!int.TryParse(Console.ReadLine(), out int newDuration))
+                if (!int.TryParse(Console.ReadLine(), out int newCourseDuration))
                 {
                     Console.WriteLine("Введите число");
                     return;
                 }
 
                 Console.Write("Стоимость: ");
-                if (!decimal.TryParse(Console.ReadLine(), out decimal newPrice))
+                if (!decimal.TryParse(Console.ReadLine(), out decimal newCoursePrice))
                 {
                     Console.WriteLine("Введите число");
                     return;
                 }
 
                 Console.Write("Преподаватель: ");
-                string newTeacher = Console.ReadLine();
+                string newTeacherName = Console.ReadLine();
 
                 Console.Write("Активный(Да/Нет): ");
-                string newStatus = Console.ReadLine().ToLower();
+                string newCourseStatus = Console.ReadLine().ToLower();
 
-                var course = _schoolService.UpdateCourse(id, newName, newDescription, newId, newDuration, newPrice, newTeacher, newStatus);
+                var course = _schoolService.UpdateCourse(oldCourseId, newCourseName, newCourseDescription, newCourseId, 
+                    newCourseDuration, newCoursePrice, newTeacherName, newCourseStatus);
                 Console.WriteLine($"Курс успешно изменён");
                 Console.WriteLine(course);
             }
@@ -236,28 +243,32 @@ namespace ConsoleApp
         /// <summary>
         /// Функция для удаления курса по ID
         /// </summary>
-        /// <param name="schoolService"></param>
         public void DeleteCourse()
         {
+            Console.Clear();
             Console.WriteLine("---Удаление курсов---\n");
 
             Console.WriteLine("Все курсы:");
 
             var courses = _schoolService.GetAllCourses();
-            Console.WriteLine(courses);
 
-            if (courses == null) 
+            if (courses.Count == 0) 
             {
                 Console.WriteLine("Курсов нет.");
                 return; 
             } //Проверка наличия курсов
 
+            foreach (var course in courses)
+            {
+                Console.WriteLine(course);
+            }
+
             Console.Write("Введите ID курса который хотите удалить: ");
-            string id = Console.ReadLine();
+            string courseId = Console.ReadLine();
 
             try
             {
-                _schoolService.DeleteCourse(id);
+                _schoolService.DeleteCourse(courseId);
                 Console.WriteLine("Курс успешно удалён");
             }
             catch (CourseNotFoundException ex)
@@ -273,40 +284,50 @@ namespace ConsoleApp
         /// <summary>
         /// Функция для отображения всех активных курсов в консоли
         /// </summary>
-        /// <param name="schoolService"></param>
         public void ShowActiveCourses()
         {
+            Console.Clear();
             Console.WriteLine("Все активные курсы:");
 
-            Console.WriteLine(_schoolService.GetActiveCourses());
+            var activeCourses = _schoolService.GetActiveCourses();
+
+            if (activeCourses.Count == 0)
+            {
+                Console.WriteLine("Активных курсов нет.");
+                return;
+            }
+
+            foreach( var course in activeCourses ) 
+            { 
+                Console.WriteLine(course); 
+            }
         }
 
         /// <summary>
         /// Функция для отображения в консоли курсов входящих в указанный ценовой диапазон
         /// </summary>
-        /// <param name="schoolService"></param>
         public void ShowCoursesByPriceRange()
         {
-            Console.WriteLine("---ПОИСК В ЦЕНОВОМ ДИАПАЗОНЕ");
+            Console.Clear();
+            Console.WriteLine("---ПОИСК В ЦЕНОВОМ ДИАПАЗОНЕ---\n");
 
             var courses = _schoolService.GetAllCourses();
-            Console.WriteLine(courses);
 
-            if (courses == null)
+            if (courses.Count == 0)
             {
                 Console.WriteLine("Курсов нет.");
                 return; 
             } //Проверка наличия курсов
 
             Console.Write("Введите минимальную цену: ");
-            if (!decimal.TryParse(Console.ReadLine(), out decimal minPrice))
+            if (!decimal.TryParse(Console.ReadLine(), out decimal minCoursePrice))
             {
                 Console.WriteLine("Необходимо вводить число");
                 return;
             }
 
             Console.Write("Введите максимальную цену: ");
-            if (!decimal.TryParse(Console.ReadLine(), out decimal maxPrice))
+            if (!decimal.TryParse(Console.ReadLine(), out decimal maxCoursePrice))
             {
                 Console.WriteLine("Необходимо вводить число");
                 return;
@@ -314,8 +335,18 @@ namespace ConsoleApp
 
             try
             {
-                Console.WriteLine($"Курсы в ценовом диапазоне {minPrice}-{maxPrice} руб.");
-                Console.WriteLine(_schoolService.GetCoursesInPriceRange(minPrice, maxPrice));
+                Console.WriteLine($"Курсы в ценовом диапазоне {minCoursePrice}-{maxCoursePrice} руб.");
+                var courseInPriceRange = _schoolService.GetCoursesInPriceRange(minCoursePrice, maxCoursePrice);
+
+                if (courseInPriceRange.Count == 0)
+                {
+                    Console.WriteLine("Курсов в заданном ценовом диапазоне нет.");
+                }
+
+                foreach (var course in courseInPriceRange)
+                {
+                    Console.WriteLine(course);
+                }
             }
             catch (InvalidPriceRangeException ex)
             {
@@ -330,28 +361,32 @@ namespace ConsoleApp
         /// <summary>
         /// Функция для изменения статуса курса через консоль
         /// </summary>
-        /// <param name="schoolService"></param>
         public void ToggleCourseStatus()
         {
-            Console.WriteLine("---ИЗМЕНИТЬ СТАТУС КУРСА---");
+            Console.Clear();
+            Console.WriteLine("---ИЗМЕНИТЬ СТАТУС КУРСА---\n");
 
             Console.WriteLine("Все курсы:");
 
             var courses = _schoolService.GetAllCourses();
-            Console.WriteLine(courses);
 
-            if (courses == null) 
+            if (courses.Count == 0) 
             {
                 Console.WriteLine("Курсов нет.");
                 return; 
             } //Проверка наличия курсов
 
+            foreach (var course in courses)
+            {
+                Console.WriteLine(course);
+            }
+
             Console.Write("Введите ID курса статус которого вы хотите изменить: ");
-            string id = Console.ReadLine();
+            string courseId = Console.ReadLine();
 
             try
             {
-                _schoolService.ToggleCourseStatus(id);
+                _schoolService.ToggleCourseStatus(courseId);
                 Console.WriteLine("Статус успешно изменён.");
             }
             catch (CourseNotFoundException ex)
