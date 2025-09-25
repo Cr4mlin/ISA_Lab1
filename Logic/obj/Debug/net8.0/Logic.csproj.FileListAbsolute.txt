@@ -1,0 +1,15 @@
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\bin\Debug\net8.0\Logic.deps.json
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\bin\Debug\net8.0\Logic.dll
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\bin\Debug\net8.0\Logic.pdb
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\bin\Debug\net8.0\Model.dll
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\bin\Debug\net8.0\Model.pdb
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\Logic.csproj.AssemblyReference.cache
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\Logic.AssemblyInfoInputs.cache
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\Logic.AssemblyInfo.cs
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\Logic.csproj.CoreCompileInputs.cache
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\Logic.csproj.Up2Date
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\Logic.dll
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\refint\Logic.dll
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\Logic.pdb
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\ref\Logic.dll
