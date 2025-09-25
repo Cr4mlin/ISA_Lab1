@@ -32,6 +32,23 @@ namespace Logic
         }
 
         /// <summary>
+        /// Валидация свойства курса
+        /// </summary>
+        /// <param name="requestedProperty">Свойство курса</param>
+        /// <returns>Значение true если свойство проходит проверку, иначе falseф</returns>
+        //public bool IsValidSearchProperties(string requestedProperty)
+        //{
+        //    List<string> pattern = ["название", "преподаватель", "идентификатор"];
+
+        //    if (pattern.Contains(requestedProperty.ToLower().Trim()))
+        //    {
+        //        return true;
+        //    }
+
+        //    return false;
+        //}
+
+        /// <summary>
         /// Валидация состояния курса
         /// </summary>
         /// <param name="status">Состояние(активен или нет)</param>
@@ -171,6 +188,65 @@ namespace Logic
             existingCourse.IsActive = isActive;
 
             return existingCourse;
+        }
+
+        /// <summary>
+        /// Возвращает список курсов найденных по выбранным свойствам
+        /// </summary>
+        /// <param name="searchText">Текст поиска</param>
+        /// <param name="searchProperties">Свойства по которым производится поиск</param>
+        /// <returns>List<Course></returns>
+        /// <exception cref="ArgumentException">Вылазит если поле пустое</exception>
+        /// <exception cref="PropertyNotFoundException">Выскакивает если свойство не найдено</exception>
+        public List<Course> SearchCourses(string searchText, List<string> searchProperties)
+        {
+            if (string.IsNullOrEmpty(searchText))
+            {
+                throw new ArgumentException("Поле для поиска не может быть пустым.");
+            }
+
+            if (searchProperties == null || !searchProperties.Any())
+            {
+                throw new ArgumentException("Не выбрано ни одно свойство для поиска");
+            }
+
+            searchText = searchText.Trim();
+
+            var courseType = typeof(Course);
+
+            var fieldNameMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            {
+                { "Название", "Name" },
+                { "Преподаватель", "TeacherName" },
+                { "Идентификатор", "Id" }
+            };
+
+            //foreach (string property in searchProperties)
+            //{
+            //    if (!IsValidSearchProperties(property))
+            //    {
+            //        throw new PropertyNotFoundException(property);
+            //    }
+            //}
+
+            List<Course> filteredCourses = _courses.Where(course =>
+            {
+                foreach (string searchProperty in searchProperties)
+                {
+                    string actuallyproperty = fieldNameMap[searchProperty];
+                    var property = courseType.GetProperty(actuallyproperty);
+
+                    var value = property.GetValue(course)?.ToString();
+
+                    if (value != null && value.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }).ToList();
+
+            return filteredCourses;
         }
 
         /// <summary>

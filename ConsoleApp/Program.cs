@@ -28,7 +28,7 @@ namespace ConsoleApp
                                 menuController.ShowAllCourses();
                                 break;
                             case 3:
-                                menuController.FindCourseById();
+                                menuController.SearchCourse();
                                 break;
                             case 4:
                                 menuController.UpdateCourse();

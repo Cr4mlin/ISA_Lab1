@@ -83,4 +83,13 @@
         public InvalidPriceRangeException(decimal minPrice, decimal maxPrice)
             : base($"Неверный ценовой диапазон") { }
     }
+
+    /// <summary>
+    /// Исключение для неверного свойства курса
+    /// </summary>
+    //public class PropertyNotFoundException : Exception
+    //{
+    //    public PropertyNotFoundException(string propertyName)
+    //        : base($"Курсы не содержат свойства {propertyName}.") { }
+    //}
 }

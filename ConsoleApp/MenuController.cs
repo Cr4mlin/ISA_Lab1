@@ -20,7 +20,7 @@ namespace ConsoleApp
             Console.WriteLine("МЕНЮ:");
             Console.WriteLine("1. Создать новый курс");
             Console.WriteLine("2. Показать все курсы");
-            Console.WriteLine("3. Найти курс по ID");
+            Console.WriteLine("3. Поиск курса");
             Console.WriteLine("4. Обновить курс");
             Console.WriteLine("5. Удалить курс");
             Console.WriteLine("6. Показать активные курсы");
@@ -70,7 +70,7 @@ namespace ConsoleApp
             Console.Write("Активный(Да/Нет): ");
             string courseStatus = Console.ReadLine().ToLower();
 
-            var course = _schoolService.CreateCourse(courseName, courseDescription, courseId, 
+            var course = _schoolService.CreateCourse(courseName, courseDescription, courseId,
                 courseDuration, coursePrice, teacherName, courseStatus);
             Console.WriteLine($"Курс создан успешно");
             Console.WriteLine(course);
@@ -99,27 +99,67 @@ namespace ConsoleApp
         }
 
         /// <summary>
-        /// Функция для отображения в консоли найденного курса
+        /// Выводит в консоль найденные курсы
         /// </summary>
-        public void FindCourseById()
+        public void SearchCourse()
         {
             Console.Clear();
-            Console.WriteLine("---ПОИСК КУРСА ПО ID---\n");
+            Console.WriteLine("---ПОИСК КУРСОВ---\n");
 
             var courses = _schoolService.GetAllCourses();
-
-            if (courses.Count == 0) 
+            if (courses.Count == 0)
             {
                 Console.WriteLine("Курсов нет.");
-                return; 
-            } //Проверка наличия курсов
+                return;
+            }
 
-            Console.WriteLine("Введите ID курса:");
+            Console.WriteLine("Доступные поля для поиска:");
+            Console.WriteLine("1 - Название");
+            Console.WriteLine("2 - Преподаватель");
+            Console.WriteLine("3 - Идентификатор");
+            Console.Write("Выберите вариант поиска: ");
 
-            string courseId = Console.ReadLine();
+            var searchOption = Console.ReadLine();
+            List<string> searchProperties = new List<string>();
 
-            var course = _schoolService.GetCourseById(courseId);
-            Console.WriteLine($"Найденный курс: {course}");
+            switch (searchOption)
+            {
+                case "1":
+                    searchProperties.Add("Название");
+                    break;
+                case "2":
+                    searchProperties.Add("Преподаватель");
+                    break;
+                case "3":
+                    searchProperties.Add("Идентификатор");
+                    break;
+                default:
+                    Console.WriteLine("Используется поиск по названию по умолчанию.");
+                    searchProperties.Add("Название");
+                    break;
+            }
+
+            Console.Write("Введите текст для поиска: ");
+            var searchText = Console.ReadLine();
+
+            var results = _schoolService.SearchCourses(searchText, searchProperties);
+
+            Console.WriteLine($"\n---РЕЗУЛЬТАТЫ ПОИСКА---");
+            Console.WriteLine($"Текст запроса: {searchText}");
+            Console.WriteLine($"Поиск по полям: {string.Join(", ", searchProperties)}");
+            Console.WriteLine($"Найдено курсов: {results.Count}");
+
+            if (results.Any())
+            {
+                foreach (var course in results)
+                {
+                    Console.WriteLine(course);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Курсы не найдены.");
+            }
         }
 
         /// <summary>
@@ -132,10 +172,10 @@ namespace ConsoleApp
 
             var courses = _schoolService.GetAllCourses();
 
-            if (courses.Count == 0) 
+            if (courses.Count == 0)
             {
                 Console.WriteLine("Курсов нет");
-                return; 
+                return;
             } //Проверка наличия курсов
 
             foreach (var course in courses)
@@ -184,7 +224,7 @@ namespace ConsoleApp
             if (excisitingCourse.IsActive) { courseStatus = "да"; }
             string newCourseStatus = ReadLineWithDefault(Console.ReadLine(), courseStatus);
 
-            var updateCourse = _schoolService.UpdateCourse(oldCourseId, newCourseName, newCourseDescription, newCourseId, 
+            var updateCourse = _schoolService.UpdateCourse(oldCourseId, newCourseName, newCourseDescription, newCourseId,
                 newCourseDuration, newCoursePrice, newTeacherName, newCourseStatus);
             Console.WriteLine($"Курс успешно изменён");
             Console.WriteLine(updateCourse);
@@ -202,10 +242,10 @@ namespace ConsoleApp
 
             var courses = _schoolService.GetAllCourses();
 
-            if (courses.Count == 0) 
+            if (courses.Count == 0)
             {
                 Console.WriteLine("Курсов нет.");
-                return; 
+                return;
             } //Проверка наличия курсов
 
             foreach (var course in courses)
@@ -236,9 +276,9 @@ namespace ConsoleApp
                 return;
             }
 
-            foreach( var course in activeCourses ) 
-            { 
-                Console.WriteLine(course); 
+            foreach (var course in activeCourses)
+            {
+                Console.WriteLine(course);
             }
         }
 
@@ -255,7 +295,7 @@ namespace ConsoleApp
             if (courses.Count == 0)
             {
                 Console.WriteLine("Курсов нет.");
-                return; 
+                return;
             } //Проверка наличия курсов
 
             Console.Write("Введите минимальную цену: ");
@@ -298,10 +338,10 @@ namespace ConsoleApp
 
             var courses = _schoolService.GetAllCourses();
 
-            if (courses.Count == 0) 
+            if (courses.Count == 0)
             {
                 Console.WriteLine("Курсов нет.");
-                return; 
+                return;
             } //Проверка наличия курсов
 
             foreach (var course in courses)
@@ -316,6 +356,12 @@ namespace ConsoleApp
             Console.WriteLine("Статус успешно изменён.");
         }
 
+        /// <summary>
+        /// Возвращает заданную строку, если не было ничего введено
+        /// </summary>
+        /// <param name="line">Новая строка</param>
+        /// <param name="oldLine">Старая строка</param>
+        /// <returns>string</returns>
         public string ReadLineWithDefault(string line, string oldLine)
         {
             if (string.IsNullOrEmpty(line))
