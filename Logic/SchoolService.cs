@@ -56,7 +56,7 @@ namespace Logic
         /// <param name="courseId">ID курса</param>
         /// <param name="duration">Длительность курса</param>
         /// <param name="price">Стоимость курса</param>
-        /// <param name="teacher">Имя преподавателя</param>
+        /// <param name="teacherName">Имя преподавателя</param>
         /// <param name="status">Состояние курса</param>
         /// <exception cref="CourseIdExistsException">Выбрасывается при дублировании кода курса</exception>
         /// <exception cref="InvalidPriceException">Выбрасывается при отрицательном значении цены</exception>
@@ -64,9 +64,9 @@ namespace Logic
         /// <exception cref="InvalidTeacherNameException">Выбрасывается при невозможном имени преподавателя</exception>
         /// <exception cref="InvalidIsActiveException">Выбрасывается при неверном указании состояния</exception>
         public Course CreateCourse(string courseName, string descripton, string courseId,
-                                   int duration, decimal price, string teacher, string status)
+                                   int duration, decimal price, string teacherName, string status)
         {
-            if (_courses.Any(c => c.CourseId.Equals(courseId, StringComparison.OrdinalIgnoreCase)))
+            if (_courses.Any(c => c.Id.Equals(courseId, StringComparison.OrdinalIgnoreCase)))
             {
                 throw new CourseIdExistsException(courseId);
             }
@@ -81,9 +81,9 @@ namespace Logic
                 throw new InvalidDurationException(duration);
             }
 
-            if (!IsValidTeacherName(teacher))
+            if (!IsValidTeacherName(teacherName))
             {
-                throw new InvalidTeacherNameException(teacher);
+                throw new InvalidTeacherNameException(teacherName);
             }
 
             if (!IsValidIsActive(status))
@@ -98,12 +98,12 @@ namespace Logic
 
             var newCourse = new Course
             {
-                CourseName = courseName,
-                CourseId = courseId,
+                Name = courseName,
+                Id = courseId,
                 Description = descripton,
                 Duration = duration,
                 Price = price,
-                Teacher = teacher,
+                TeacherName = teacherName,
                 IsActive = isActive
             };
 
@@ -120,7 +120,7 @@ namespace Logic
         /// <param name="courseId">ID курса</param>
         /// <param name="duration">Длительность курса</param>
         /// <param name="price">Стоимость курса</param>
-        /// <param name="teacher">Имя преподавателя</param>
+        /// <param name="teacherName">Имя преподавателя</param>
         /// <param name="status">Состояние курса</param>
         /// <exception cref="CourseIdExistsException">Выбрасывается при дублировании кода курса</exception>
         /// <exception cref="InvalidPriceException">Выбрасывается при отрицательном значении цены</exception>
@@ -128,15 +128,15 @@ namespace Logic
         /// <exception cref="InvalidTeacherNameException">Выбрасывается при невозможном имени преподавателя</exception>
         /// <exception cref="InvalidIsActiveException">Выбрасывается при неверном указании состояния</exception>
         public Course UpdateCourse(string oldId, string courseName, string description, string courseId,
-                                  int duration, decimal price, string teacher, string status)
+                                  int duration, decimal price, string teacherName, string status)
         {
             var existingCourse = GetCourseById(oldId);
 
             bool isActive = true;
 
-            if (_courses.Any(c => c.CourseId.Equals(courseId, StringComparison.OrdinalIgnoreCase)))
+            if (_courses.Any(c => c.Id.Equals(courseId, StringComparison.OrdinalIgnoreCase)) && courseId != existingCourse.Id)
             {
-                throw new CourseIdExistsException(existingCourse.CourseId);
+                throw new CourseIdExistsException(courseId);
             }
 
             if (price < 0)
@@ -149,9 +149,9 @@ namespace Logic
                 throw new InvalidDurationException(duration);
             }
 
-            if (!IsValidTeacherName(teacher))
+            if (!IsValidTeacherName(teacherName))
             {
-                throw new InvalidTeacherNameException(teacher);
+                throw new InvalidTeacherNameException(teacherName);
             }
 
             if (!IsValidIsActive(status))
@@ -162,12 +162,12 @@ namespace Logic
             if (status == "да") { isActive = true; }
             if (status == "нет") { isActive = false; }
 
-            existingCourse.CourseName = courseName;
-            existingCourse.CourseId = courseId;
+            existingCourse.Name = courseName;
+            existingCourse.Id = courseId;
             existingCourse.Description = description;
             existingCourse.Duration = duration;
             existingCourse.Price = price;
-            existingCourse.Teacher = teacher;
+            existingCourse.TeacherName = teacherName;
             existingCourse.IsActive = isActive;
 
             return existingCourse;
@@ -200,7 +200,7 @@ namespace Logic
         /// <returns>Course</returns>
         public Course GetCourseById(string courseId)
         {
-            return _courses.FirstOrDefault(c => c.CourseId == courseId)
+            return _courses.FirstOrDefault(c => c.Id == courseId)
                     ?? throw new CourseNotFoundException(courseId);
         }
 

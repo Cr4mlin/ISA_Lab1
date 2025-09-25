@@ -3,12 +3,12 @@
     public class Course
     {
         // Свойства курса
-        public string CourseName { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public string CourseId { get; set; } = string.Empty;
+        public string Id { get; set; } = string.Empty;
         public int Duration { get; set; }
         public decimal Price { get; set; }
-        public string Teacher { get; set; } = string.Empty;
+        public string TeacherName { get; set; } = string.Empty;
         public bool IsActive { get; set; } = true;
 
         /// <summary>
@@ -18,7 +18,7 @@
         public override string ToString()
         {
             string courseStatus = IsActive ? "Да" : "Нет";
-            return $"ID: {CourseId}, Название: {CourseName} (Преп.: {Teacher}, Дл.: {Duration} ч., Стоимость: {Price} руб., Активен: {courseStatus})";
+            return $"ID: {Id}, Название: {Name} (Преп.: {TeacherName}, Дл.: {Duration} ч., Стоимость: {Price} руб., Активен: {courseStatus})";
         }
     }
 }

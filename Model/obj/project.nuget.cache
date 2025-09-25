@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bo9HuoE083c=",
+  "dgSpecHash": "NZqn8Eu6AjM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\Model\\Model.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Арсен\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.101\\microsoft.net.sdk.compilers.toolset.9.0.101.nupkg.sha512",
-    "C:\\Users\\Арсен\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.11\\microsoft.windowsdesktop.app.ref.8.0.11.nupkg.sha512",
-    "C:\\Users\\Арсен\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.11\\microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
-    "C:\\Users\\Арсен\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.11\\microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Model.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

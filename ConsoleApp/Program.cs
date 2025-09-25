@@ -73,6 +73,14 @@ namespace ConsoleApp
                     {
                         Console.WriteLine(ex.Message);
                     }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine("Введены данные не того типа!");
+                    }
+                    catch (OverflowException ex)
+                    {
+                        Console.WriteLine("Введённое число слишком большое!");
+                    }
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.Message);

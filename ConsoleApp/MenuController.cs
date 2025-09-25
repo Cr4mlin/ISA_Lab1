@@ -47,14 +47,18 @@ namespace ConsoleApp
             string courseId = Console.ReadLine();
 
             Console.Write("Длительность (часов): ");
-            if (!int.TryParse(Console.ReadLine(), out int courseDuration))
+            string inputCourseDuration = Console.ReadLine();
+            if (string.IsNullOrEmpty(inputCourseDuration)) { inputCourseDuration = "0"; }
+            if (!int.TryParse(inputCourseDuration, out int courseDuration))
             {
                 Console.WriteLine("Необходимо вводить число");
                 return;
             }
 
             Console.Write("Стоимость: ");
-            if (!decimal.TryParse(Console.ReadLine(), out decimal coursePrice))
+            string inputCoursePrice = Console.ReadLine();
+            if (string.IsNullOrEmpty(inputCoursePrice)) { inputCoursePrice = "0"; }
+            if (!decimal.TryParse(inputCoursePrice, out decimal coursePrice))
             {
                 Console.WriteLine("Необходимо вводить число");
                 return;
@@ -145,34 +149,40 @@ namespace ConsoleApp
             var excisitingCourse = _schoolService.GetCourseById(oldCourseId);
             Console.WriteLine($"Текущие данные: {excisitingCourse}");
 
+            Console.WriteLine("Можете оставлять поля пустыми для того, чтобы не изменять параметры.");
+
             Console.Write("Название курса: ");
-            string newCourseName = Console.ReadLine();
+            string newCourseName = ReadLineWithDefault(Console.ReadLine(), excisitingCourse.Name);
 
             Console.Write("Описание: ");
-            string newCourseDescription = Console.ReadLine();
+            string newCourseDescription = ReadLineWithDefault(Console.ReadLine(), excisitingCourse.Description);
 
             Console.Write("ID курса: ");
-            string newCourseId = Console.ReadLine();
+            string newCourseId = ReadLineWithDefault(Console.ReadLine(), excisitingCourse.Id);
 
             Console.Write("Длительность (часов): ");
-            if (!int.TryParse(Console.ReadLine(), out int newCourseDuration))
+            string newDuration = ReadLineWithDefault(Console.ReadLine(), Convert.ToString(excisitingCourse.Duration));
+            if (!int.TryParse(newDuration, out int newCourseDuration))
             {
                 Console.WriteLine("Введите число");
                 return;
             }
 
             Console.Write("Стоимость: ");
-            if (!decimal.TryParse(Console.ReadLine(), out decimal newCoursePrice))
+            string newPrice = ReadLineWithDefault(Console.ReadLine(), Convert.ToString(excisitingCourse.Price));
+            if (!decimal.TryParse(newPrice, out decimal newCoursePrice))
             {
                 Console.WriteLine("Введите число");
                 return;
             }
 
             Console.Write("Преподаватель: ");
-            string newTeacherName = Console.ReadLine();
+            string newTeacherName = ReadLineWithDefault(Console.ReadLine(), excisitingCourse.TeacherName);
 
             Console.Write("Активный(Да/Нет): ");
-            string newCourseStatus = Console.ReadLine().ToLower();
+            string courseStatus = "нет";
+            if (excisitingCourse.IsActive) { courseStatus = "да"; }
+            string newCourseStatus = ReadLineWithDefault(Console.ReadLine(), courseStatus);
 
             var updateCourse = _schoolService.UpdateCourse(oldCourseId, newCourseName, newCourseDescription, newCourseId, 
                 newCourseDuration, newCoursePrice, newTeacherName, newCourseStatus);
@@ -304,6 +314,18 @@ namespace ConsoleApp
 
             _schoolService.ToggleCourseStatus(courseId);
             Console.WriteLine("Статус успешно изменён.");
+        }
+
+        public string ReadLineWithDefault(string line, string oldLine)
+        {
+            if (string.IsNullOrEmpty(line))
+            {
+                return oldLine;
+            }
+            else
+            {
+                return line;
+            }
         }
     }
 }
