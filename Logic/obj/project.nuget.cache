@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "4ruC1F7Aon8=",
+  "dgSpecHash": "1pPWKvDbTOA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\Logic.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\Logic\\Logic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Арсен\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.101\\microsoft.net.sdk.compilers.toolset.9.0.101.nupkg.sha512",
+    "C:\\Users\\Арсен\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.11\\microsoft.windowsdesktop.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\Арсен\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.11\\microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\Арсен\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.11\\microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512"
+  ],
   "logs": []
 }
