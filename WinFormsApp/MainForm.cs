@@ -96,41 +96,91 @@ namespace WinFormsApp
         {
             if (dataGridViewCourses.SelectedRows.Count > 0)
             {
-                var selectedCourse = dataGridViewCourses.SelectedRows[0].DataBoundItem;
-                if (selectedCourse != null)
+                if (dataGridViewCourses.SelectedRows.Count > 0)
                 {
-                    var courseId = selectedCourse.GetType().GetProperty("Id")?.GetValue(selectedCourse)?.ToString();
+                    var selectedCourses = new List<object>();
+                    var courseIds = new List<string>();
 
-                    if (!string.IsNullOrEmpty(courseId))
+                    foreach (DataGridViewRow row in dataGridViewCourses.SelectedRows)
                     {
-                        var result = MessageBox.Show($"Вы уверены, что хотите удалить курс?",
-                            "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (row.DataBoundItem != null)
+                        {
+                            selectedCourses.Add(row.DataBoundItem);
+                            var courseId = row.DataBoundItem.GetType().GetProperty("Id")?.GetValue(row.DataBoundItem)?.ToString();
+                            if (!string.IsNullOrEmpty(courseId))
+                            {
+                                courseIds.Add(courseId);
+                            }
+                        }
+                    }
+
+                    if (courseIds.Count > 0)
+                    {
+                        string message = courseIds.Count == 1
+                            ? "Вы уверены, что хотите удалить выбранный курс?"
+                            : $"Вы уверены, что хотите удалить {courseIds.Count} выбранных курсов?";
+
+                        var result = MessageBox.Show(message, "Подтверждение удаления",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         if (result == DialogResult.Yes)
                         {
                             try
                             {
-                                if (_schoolService.DeleteCourse(courseId))
+                                int deletedCount = 0;
+                                var errors = new List<string>();
+
+                                // Удаляем курсы по одному, собирая ошибки
+                                foreach (var courseId in courseIds)
                                 {
-                                    RefreshCoursesList();
-                                    MessageBox.Show("Курс успешно удален", "Успех",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    try
+                                    {
+                                        if (_schoolService.DeleteCourse(courseId))
+                                        {
+                                            deletedCount++;
+                                        }
+                                    }
+                                    catch (CourseNotFoundException ex)
+                                    {
+                                        errors.Add($"Курс с ID '{courseId}' не найден: {ex.Message}");
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        errors.Add($"Ошибка при удалении курса '{courseId}': {ex.Message}");
+                                    }
                                 }
-                            }
-                            catch (CourseNotFoundException ex)
-                            {
-                                MessageBox.Show($"Ошибка: {ex.Message}", "Курс не найден",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                                // Показываем результат операции
+                                string resultMessage = $"Успешно удалено курсов: {deletedCount}";
+                                if (errors.Count > 0)
+                                {
+                                    resultMessage += $"\nОшибок: {errors.Count}";
+                                    if (errors.Count <= 5) // Показываем первые 5 ошибок
+                                    {
+                                        resultMessage += "\n\n" + string.Join("\n", errors.Take(5));
+                                    }
+                                    else
+                                    {
+                                        resultMessage += $"\n\nПервые 5 ошибок:\n" + string.Join("\n", errors.Take(5));
+                                        resultMessage += $"\n... и еще {errors.Count - 5} ошибок";
+                                    }
+                                }
+
+                                RefreshCoursesList();
+
+                                MessageBox.Show(resultMessage, "Результат удаления",
+                                    deletedCount > 0 ? MessageBoxButtons.OK : MessageBoxButtons.OK,
+                                    deletedCount > 0 ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show($"Ошибка при удалении курса: {ex.Message}", "Ошибка",
+                                MessageBox.Show($"Общая ошибка при удалении курсов: {ex.Message}", "Ошибка",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
                 }
-            }
+            }   
             else
             {
                 MessageBox.Show("Выберите курс для удаления", "Информация",

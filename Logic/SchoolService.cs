@@ -5,7 +5,15 @@ namespace Logic
 {
     public class SchoolService
     {
-        private readonly List<Course> _courses = new List<Course>();
+        private readonly List<Course> _courses = new List<Course>()
+        {
+            new Course { Id = "1", Name = "C# Programming", Description = "Основы программирования на C#",
+                        Duration = 60, Price = 10000, TeacherName = "Иванов", IsActive = true },
+            new Course { Id = "2", Name = "Java Advanced", Description = "Продвинутый курс Java",
+                        Duration = 80, Price = 15000, TeacherName = "Петров", IsActive = true },
+            new Course { Id = "3", Name = "Web Development", Description = "Разработка веб-приложений",
+                        Duration = 40, Price = 8000, TeacherName = "Сидоров", IsActive = false }
+        };
 
         /// <summary>
         /// Валидация имени преподавателя

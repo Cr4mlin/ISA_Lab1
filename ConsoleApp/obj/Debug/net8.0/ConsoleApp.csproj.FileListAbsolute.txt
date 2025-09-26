@@ -12,10 +12,10 @@ C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.Gener
 C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.AssemblyInfoInputs.cache
 C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.AssemblyInfo.cs
 C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.sourcelink.json
 C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.csproj.Up2Date
 C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.dll
 C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\refint\ConsoleApp.dll
 C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.pdb
 C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.genruntimeconfig.cache
 C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ref\ConsoleApp.dll
-C:\Users\Maxim\source\repos\Lab1_S3\ConsoleApp\obj\Debug\net8.0\ConsoleApp.sourcelink.json
