@@ -41,8 +41,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "Logic >= 1.0.0",
-      "Model >= 1.0.0"
+      "Logic >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -80,9 +79,6 @@
           "projectReferences": {
             "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\Logic\\Logic.csproj": {
               "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\Logic\\Logic.csproj"
-            },
-            "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\Model\\Model.csproj"
             }
           }
         }
