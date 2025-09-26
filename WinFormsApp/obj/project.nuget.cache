@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "6stJMcEE86Q=",
-=======
-  "dgSpecHash": "4f5ghsxMANY=",
->>>>>>> 8257e5c32567d529ca4f08ffff4a0882bf932850
+  "dgSpecHash": "3Jn9Kr1ZqsU=",
   "success": true,
   "projectFilePath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\WinFormsApp\\WinFormsApp.csproj",
   "expectedPackageFiles": [
