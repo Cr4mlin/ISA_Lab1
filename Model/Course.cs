@@ -1,11 +1,12 @@
 ﻿namespace Model
 {
-    public class Course
+    public class Course : IDomainObject
     {
         // Свойства курса
+
+        public string Id { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public string Id { get; set; } = string.Empty;
         public int Duration { get; set; }
         public decimal Price { get; set; }
         public string TeacherName { get; set; } = string.Empty;

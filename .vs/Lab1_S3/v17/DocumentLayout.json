@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\winformsapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\winformsapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\dataaccesslayer\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\consoleapp\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D8AE7843-5803-49DD-B8B6-AD2C00B22737}|Model\\Model.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\model\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AE7843-5803-49DD-B8B6-AD2C00B22737}|Model\\Model.csproj|solutionrelative:model\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\winformsapp\\pricerangeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\pricerangeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\winformsapp\\pricerangeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\pricerangeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\logic\\schoolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|solutionrelative:logic\\schoolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D8AE7843-5803-49DD-B8B6-AD2C00B22737}|Model\\Model.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\model\\idomainobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AE7843-5803-49DD-B8B6-AD2C00B22737}|Model\\Model.csproj|solutionrelative:model\\idomainobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,77 +47,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\MainForm.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\MainForm.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\MainForm.cs",
-              "RelativeToolTip": "WinFormsApp\\MainForm.cs",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAkwL0AAAAAAAAAAAAAAA==",
+              "Title": "EntityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\EntityRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\EntityRepository.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\EntityRepository.cs",
+              "RelativeToolTip": "DataAccessLayer\\EntityRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T05:51:07.234Z",
+              "WhenOpened": "2025-10-16T11:31:59.094Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\MainForm.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\MainForm.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "WinFormsApp\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\ApplicationDbContext.cs",
+              "RelativeToolTip": "DataAccessLayer\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T05:51:04.743Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PriceRangeForm.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\PriceRangeForm.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\PriceRangeForm.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\PriceRangeForm.cs",
-              "RelativeToolTip": "WinFormsApp\\PriceRangeForm.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T05:45:27.395Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PriceRangeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\PriceRangeForm.cs",
-              "RelativeDocumentMoniker": "WinFormsApp\\PriceRangeForm.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\PriceRangeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "WinFormsApp\\PriceRangeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T05:45:23.567Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SchoolService.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\SchoolService.cs",
-              "RelativeDocumentMoniker": "Logic\\SchoolService.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\SchoolService.cs",
-              "RelativeToolTip": "Logic\\SchoolService.cs",
-              "ViewState": "AgIAACwBAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T05:44:37.451Z",
+              "WhenOpened": "2025-10-16T11:23:20.807Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MenuController.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\ConsoleApp\\MenuController.cs",
-              "RelativeDocumentMoniker": "ConsoleApp\\MenuController.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\ConsoleApp\\MenuController.cs",
-              "RelativeToolTip": "ConsoleApp\\MenuController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Course.cs",
+              "RelativeDocumentMoniker": "Model\\Course.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Course.cs",
+              "RelativeToolTip": "Model\\Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T04:35:22.934Z",
+              "WhenOpened": "2025-10-16T11:02:10.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IDomainObject.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\IDomainObject.cs",
+              "RelativeDocumentMoniker": "Model\\IDomainObject.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\IDomainObject.cs",
+              "RelativeToolTip": "Model\\IDomainObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T11:00:30.994Z",
               "EditorCaption": ""
             }
           ]
