@@ -1,25 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\",
+  "WorkspaceRootPath": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab1\\dataaccesslayer\\dapperrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\dapperrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\dataaccesslayer\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab1\\dataaccesslayer\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\consoleapp\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab1\\dataaccesslayer\\dataaccesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\dataaccesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab1\\dataaccesslayer\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab1\\dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\entityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab1\\consoleapp\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\logic\\schoolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab1\\logic\\schoolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|solutionrelative:logic\\schoolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab1\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -51,10 +63,49 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DapperRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\DataAccessLayer\\DapperRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\DapperRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\DataAccessLayer\\DapperRepository.cs",
+              "RelativeToolTip": "DataAccessLayer\\DapperRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T19:23:04.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DataAccessLayer",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\DataAccessLayer\\DataAccessLayer.csproj",
+              "RelativeDocumentMoniker": "DataAccessLayer\\DataAccessLayer.csproj",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\DataAccessLayer\\DataAccessLayer.csproj",
+              "RelativeToolTip": "DataAccessLayer\\DataAccessLayer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-16T19:22:50.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\DataAccessLayer\\IRepository.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\IRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\DataAccessLayer\\IRepository.cs",
+              "RelativeToolTip": "DataAccessLayer\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T18:06:29.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "EntityRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\EntityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\DataAccessLayer\\EntityRepository.cs",
               "RelativeDocumentMoniker": "DataAccessLayer\\EntityRepository.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\EntityRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\DataAccessLayer\\EntityRepository.cs",
               "RelativeToolTip": "DataAccessLayer\\EntityRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -65,22 +116,30 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\DataAccessLayer\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "DataAccessLayer\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\DataAccessLayer\\ApplicationDbContext.cs",
               "RelativeToolTip": "DataAccessLayer\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-16T17:43:12.688Z",
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "SchoolService.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\SchoolService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\Logic\\SchoolService.cs",
               "RelativeDocumentMoniker": "Logic\\SchoolService.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\SchoolService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\Logic\\SchoolService.cs",
               "RelativeToolTip": "Logic\\SchoolService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAI4AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -88,24 +147,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "MenuController.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\ConsoleApp\\MenuController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\ConsoleApp\\MenuController.cs",
               "RelativeDocumentMoniker": "ConsoleApp\\MenuController.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\ConsoleApp\\MenuController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\ConsoleApp\\MenuController.cs",
               "RelativeToolTip": "ConsoleApp\\MenuController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T15:14:32.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-16T15:14:32.904Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\ConsoleApp\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\ConsoleApp\\Program.cs",
               "RelativeDocumentMoniker": "ConsoleApp\\Program.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\ConsoleApp\\Program.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab1\\ConsoleApp\\Program.cs",
               "RelativeToolTip": "ConsoleApp\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
