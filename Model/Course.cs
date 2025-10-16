@@ -19,7 +19,7 @@
         public override string ToString()
         {
             string courseStatus = IsActive ? "Да" : "Нет";
-            return $"ID: {Id}, Название: {Name} (Преп.: {TeacherName}, Опис.: {Description}, Дл.: {Duration} ч., Стоимость: {Price} руб., Активен: {courseStatus})";
+            return $"ID: {Id.Trim()}, Название: {Name.Trim()} (Преп.: {TeacherName.Trim()}, Опис.: {Description.Trim()}, Дл.: {Duration} ч., Стоимость: {Price} руб., Активен: {courseStatus})";
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Model;
+using SQLitePCL;
 
 namespace DataAccessLayer
 {

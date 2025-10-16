@@ -13,16 +13,13 @@ namespace DataAccessLayer
         public DbSet<Course> Courses { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-            Database.EnsureCreated(); // создаёт БД, если её нет
-        }
+            : base(options) { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=courses.db");
+                optionsBuilder.UseSqlServer("");
             }
         }
     }

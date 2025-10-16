@@ -1,4 +1,11 @@
-﻿using Logic;
+﻿using DataAccessLayer;
+using System.Data;
+using System;
+using Logic;
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
+using Model;
+using Microsoft.Extensions.Options;
 
 namespace ConsoleApp
 {
@@ -6,8 +13,46 @@ namespace ConsoleApp
     {
         static void Main()
         {
-            SchoolService schoolService = new SchoolService();
-            MenuController menuController = new MenuController(schoolService);
+            Console.WriteLine("---СИСТЕМА УПРАВЛЕНИЯ КУРСАМИ---\n");
+            Console.WriteLine("Выберите режим работы с БД:");
+            Console.WriteLine("1. Entity Framework");
+            Console.WriteLine("2. Dapper");
+            Console.Write("Ваш выбор: ");
+
+            string choiceRepository = Console.ReadLine() ?? "1";
+
+            IRepository<Course> repository;
+
+            // Entity Framework
+            if (choiceRepository == "1")
+            {
+                var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                    .UseSqlServer("Server=DESKTOP-VLCID23\\SQLEXPRESS02;Database=School;Trusted_Connection=True;TrustServerCertificate=True;")
+                    .Options;
+
+                var context = new ApplicationDbContext(options);
+                repository = new EntityRepository<Course>(context);
+
+                Console.WriteLine("\nИспользуется репозиторий Entity Framework.\n");
+            }
+            // Dapper
+            else
+            {
+                //IDbConnection connection = new SqliteConnection("Data Source=courses.db");
+                //repository = new DapperRepository<Course>(connection);
+
+                //Заглушка
+                var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                   .UseSqlServer("Data Source=courses.db")
+                   .Options;
+                var context = new ApplicationDbContext(options);
+                repository = new EntityRepository<Course>(context);
+
+                Console.WriteLine("\nИспользуется репозиторий Dapper.\n");
+            }
+
+            var schoolService = new SchoolService(repository);
+            var menuController = new MenuController(schoolService);
 
             while (true)
             {

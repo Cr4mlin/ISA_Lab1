@@ -11,12 +11,16 @@
       "RelativeMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8AE7843-5803-49DD-B8B6-AD2C00B22737}|Model\\Model.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\model\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D8AE7843-5803-49DD-B8B6-AD2C00B22737}|Model\\Model.csproj|solutionrelative:model\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\consoleapp\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8AE7843-5803-49DD-B8B6-AD2C00B22737}|Model\\Model.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\model\\idomainobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D8AE7843-5803-49DD-B8B6-AD2C00B22737}|Model\\Model.csproj|solutionrelative:model\\idomainobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\logic\\schoolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|solutionrelative:logic\\schoolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -52,9 +56,9 @@
               "RelativeDocumentMoniker": "DataAccessLayer\\EntityRepository.cs",
               "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\EntityRepository.cs",
               "RelativeToolTip": "DataAccessLayer\\EntityRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T11:31:59.094Z",
+              "WhenOpened": "2025-10-16T17:43:32.524Z",
               "EditorCaption": ""
             },
             {
@@ -65,36 +69,47 @@
               "RelativeDocumentMoniker": "DataAccessLayer\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\ApplicationDbContext.cs",
               "RelativeToolTip": "DataAccessLayer\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T11:23:20.807Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Course.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Course.cs",
-              "RelativeDocumentMoniker": "Model\\Course.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Course.cs",
-              "RelativeToolTip": "Model\\Course.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T11:02:10.317Z",
+              "WhenOpened": "2025-10-16T17:43:12.688Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IDomainObject.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\IDomainObject.cs",
-              "RelativeDocumentMoniker": "Model\\IDomainObject.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\IDomainObject.cs",
-              "RelativeToolTip": "Model\\IDomainObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Title": "SchoolService.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\SchoolService.cs",
+              "RelativeDocumentMoniker": "Logic\\SchoolService.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\SchoolService.cs",
+              "RelativeToolTip": "Logic\\SchoolService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI4AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T11:00:30.994Z",
+              "WhenOpened": "2025-10-16T17:36:59.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MenuController.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\ConsoleApp\\MenuController.cs",
+              "RelativeDocumentMoniker": "ConsoleApp\\MenuController.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\ConsoleApp\\MenuController.cs",
+              "RelativeToolTip": "ConsoleApp\\MenuController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T15:14:32.904Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\ConsoleApp\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\ConsoleApp\\Program.cs",
+              "RelativeToolTip": "ConsoleApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T15:14:25.566Z"
             }
           ]
         }

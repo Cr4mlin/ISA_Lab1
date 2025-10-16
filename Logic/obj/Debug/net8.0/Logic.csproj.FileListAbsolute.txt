@@ -14,3 +14,5 @@ C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\Logic.dll
 C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\refint\Logic.dll
 C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\Logic.pdb
 C:\Users\Maxim\source\repos\Lab1_S3\Logic\obj\Debug\net8.0\ref\Logic.dll
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\bin\Debug\net8.0\DataAccessLayer.dll
+C:\Users\Maxim\source\repos\Lab1_S3\Logic\bin\Debug\net8.0\DataAccessLayer.pdb

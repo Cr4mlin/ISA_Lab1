@@ -11,6 +11,15 @@ namespace ConsoleApp
             _schoolService = schoolService;
         }
 
+        public void ChoiceRepository()
+        {
+            Console.WriteLine("---СИСТЕМА УПРАВЛЕНИЯ КУРСАМИ---\n");
+            Console.WriteLine("Выберите режим работы с БД:");
+            Console.WriteLine("1. Entity Framework");
+            Console.WriteLine("2. Dapper");
+            Console.Write("Ваш выбор: ");
+        }
+
         /// <summary>
         /// Функция для отображения меню консоли
         /// </summary>

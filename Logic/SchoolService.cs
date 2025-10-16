@@ -1,19 +1,12 @@
 ﻿using System.Text.RegularExpressions;
+using DataAccessLayer;
 using Model;
 
 namespace Logic
 {
     public class SchoolService
     {
-        private readonly List<Course> _courses = new List<Course>()
-        {
-            new Course { Id = "1", Name = "C# Programming", Description = "Основы программирования на C#",
-                        Duration = 60, Price = 10000, TeacherName = "Иванов", IsActive = true },
-            new Course { Id = "2", Name = "Java Advanced", Description = "Продвинутый курс Java",
-                        Duration = 80, Price = 15000, TeacherName = "Петров", IsActive = true },
-            new Course { Id = "3", Name = "Web Development", Description = "Разработка веб-приложений",
-                        Duration = 40, Price = 8000, TeacherName = "Сидоров", IsActive = false }
-        };
+        private readonly IRepository<Course> _repository;
 
         /// <summary>
         /// Валидация имени преподавателя
@@ -40,23 +33,6 @@ namespace Logic
         }
 
         /// <summary>
-        /// Валидация свойства курса
-        /// </summary>
-        /// <param name="requestedProperty">Свойство курса</param>
-        /// <returns>Значение true если свойство проходит проверку, иначе falseф</returns>
-        //public bool IsValidSearchProperties(string requestedProperty)
-        //{
-        //    List<string> pattern = ["название", "преподаватель", "идентификатор"];
-
-        //    if (pattern.Contains(requestedProperty.ToLower().Trim()))
-        //    {
-        //        return true;
-        //    }
-
-        //    return false;
-        //}
-
-        /// <summary>
         /// Валидация состояния курса
         /// </summary>
         /// <param name="status">Состояние(активен или нет)</param>
@@ -71,6 +47,11 @@ namespace Logic
                 return true;
 
             return false;
+        }
+
+        public SchoolService(IRepository<Course> repository)
+        {
+            _repository = repository;
         }
 
         /// <summary>
@@ -91,7 +72,7 @@ namespace Logic
         public Course CreateCourse(string courseName, string descripton, string courseId,
                                    int duration, decimal price, string teacherName, string status)
         {
-            if (_courses.Any(c => c.Id.Equals(courseId, StringComparison.OrdinalIgnoreCase)))
+            if (_repository.ReadById(courseId) != null)
             {
                 throw new CourseIdExistsException(courseId);
             }
@@ -132,7 +113,7 @@ namespace Logic
                 IsActive = isActive
             };
 
-            _courses.Add(newCourse);
+            _repository.Add(newCourse);
             return newCourse;
         }
 
@@ -155,11 +136,11 @@ namespace Logic
         public Course UpdateCourse(string oldId, string courseName, string description, string courseId,
                                   int duration, decimal price, string teacherName, string status)
         {
-            var existingCourse = GetCourseById(oldId);
+            var existingCourse = _repository.ReadById(oldId);
 
             bool isActive = true;
 
-            if (_courses.Any(c => c.Id.Equals(courseId, StringComparison.OrdinalIgnoreCase)) && courseId != existingCourse.Id)
+            if (_repository.ReadById(courseId) != null)
             {
                 throw new CourseIdExistsException(courseId);
             }
@@ -194,6 +175,8 @@ namespace Logic
             existingCourse.Price = price;
             existingCourse.TeacherName = teacherName;
             existingCourse.IsActive = isActive;
+
+            _repository.Update(existingCourse);
 
             return existingCourse;
         }
@@ -237,7 +220,8 @@ namespace Logic
             //    }
             //}
 
-            List<Course> filteredCourses = _courses.Where(course =>
+            var allCourses = _repository.ReadAll(); 
+            List<Course> filteredCourses = allCourses.Where(course =>
             {
                 foreach (string searchProperty in searchProperties)
                 {
@@ -264,10 +248,11 @@ namespace Logic
         /// <returns>Если курс удалён, то возвращает true, иначе false</returns>
         public bool DeleteCourse(string courseId)
         {
-            var courseToRemove = GetCourseById(courseId);
+            var courseToRemove = _repository.ReadById(courseId);
             if (courseToRemove != null)
             {
-                return _courses.Remove(courseToRemove);
+                _repository.Delete(courseId);
+                return true;
             }
             return false;
         }
@@ -276,17 +261,13 @@ namespace Logic
         /// Возвращает список всех курсов
         /// </summary>
         /// <returns>List<Course></returns>
-        public List<Course> GetAllCourses() => new List<Course>(_courses);
+        public List<Course> GetAllCourses() => _repository.ReadAll();
 
         /// <summary>
         /// Возвращает курс с таким же ID, какое было передано в функцию
         /// </summary>
         /// <returns>Course</returns>
-        public Course GetCourseById(string courseId)
-        {
-            return _courses.FirstOrDefault(c => c.Id == courseId)
-                    ?? throw new CourseNotFoundException(courseId);
-        }
+        public Course GetCourseById(string id) => _repository.ReadById(id);
 
         /// <summary>
         /// Возвращает список активных курсов
@@ -294,7 +275,9 @@ namespace Logic
         /// <returns>List<Course></returns>
         public List<Course> GetActiveCourses()
         {
-            var courseList = _courses.Where(c => c.IsActive).ToList();
+            var allCourses = _repository.ReadAll();
+
+            var courseList = allCourses.Where(c => c.IsActive).ToList();
             return courseList;
         }
 
@@ -308,8 +291,9 @@ namespace Logic
             {
                 throw new InvalidPriceRangeException(minPrice, maxPrice);
             }
+            var allCourses = _repository.ReadAll();
 
-            var filterCourses = _courses.Where(c => c.Price >= minPrice && c.Price <= maxPrice).ToList();
+            var filterCourses = allCourses.Where(c => c.Price >= minPrice && c.Price <= maxPrice).ToList();
             return filterCourses;
         }
 
@@ -319,7 +303,7 @@ namespace Logic
         /// <param name="courseId">ID курса</param>
         public void ToggleCourseStatus(string courseId)
         {
-            var course = GetCourseById(courseId);
+            var course = _repository.ReadById(courseId);
             course.IsActive = !course.IsActive;
         }
     }
