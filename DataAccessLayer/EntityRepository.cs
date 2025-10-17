@@ -40,8 +40,8 @@ namespace DataAccessLayer
 
         public T ReadById(string id)
         {
-            return _dbSet.FirstOrDefault(e => e.Id == id)
-                ?? throw new Exception($"Объект с Id={id} не найден");
+            return _dbSet.FirstOrDefault(e => e.Id == id);
+                //?? throw new Exception($"Объект с Id={id} не найден");
         }
 
         public void Update(T entity)

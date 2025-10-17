@@ -4,6 +4,9 @@
     <Compile Update="AddEditCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DbConnectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

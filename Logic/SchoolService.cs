@@ -133,17 +133,12 @@ namespace Logic
         /// <exception cref="InvalidDurationException">Выбрасывается при отрицательном значении продолжительности</exception>
         /// <exception cref="InvalidTeacherNameException">Выбрасывается при невозможном имени преподавателя</exception>
         /// <exception cref="InvalidIsActiveException">Выбрасывается при неверном указании состояния</exception>
-        public Course UpdateCourse(string oldId, string courseName, string description, string courseId,
+        public Course UpdateCourse(string oldId, string courseName, string description,
                                   int duration, decimal price, string teacherName, string status)
         {
             var existingCourse = _repository.ReadById(oldId);
 
             bool isActive = true;
-
-            if (_repository.ReadById(courseId) != null)
-            {
-                throw new CourseIdExistsException(courseId);
-            }
 
             if (price < 0)
             {
@@ -169,7 +164,6 @@ namespace Logic
             if (status == "нет") { isActive = false; }
 
             existingCourse.Name = courseName;
-            existingCourse.Id = courseId;
             existingCourse.Description = description;
             existingCourse.Duration = duration;
             existingCourse.Price = price;

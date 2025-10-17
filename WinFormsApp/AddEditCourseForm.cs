@@ -89,10 +89,10 @@ namespace WinFormsApp
                     if (string.IsNullOrEmpty(oldId)) throw new InvalidOperationException("Не удалось получить ID курса");
 
                     _schoolService.UpdateCourse(
-                        oldId,
+                        oldId.Trim(),
                         txtName.Text.Trim(),
                         txtDescription.Text.Trim(),
-                        txtId.Text.Trim(),
+                        //txtId.Text.Trim(),
                         (int)numDuration.Value,
                         numPrice.Value,
                         txtTeacher.Text.Trim(),

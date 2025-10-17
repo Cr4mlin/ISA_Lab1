@@ -1,10 +1,14 @@
-﻿using Logic;
+﻿using DataAccessLayer;
+using Logic;
+using Microsoft.EntityFrameworkCore;
+using Model;
 
 namespace WinFormsApp
 {
     public partial class MainForm : Form
     {
         private SchoolService _schoolService;
+        private IRepository<Course> _repository;
 
         /// <summary>
         /// Инициализирует главную форму приложения
@@ -12,8 +16,6 @@ namespace WinFormsApp
         public MainForm()
         {
             InitializeComponent();
-            _schoolService = new SchoolService();
-            RefreshCoursesList();
         }
 
         /// <summary>
@@ -279,6 +281,41 @@ namespace WinFormsApp
         private void btnShowAll_Click(object sender, EventArgs e)
         {
             RefreshCoursesList();
+        }
+
+        private void btnSelectConnection_Click(object sender, EventArgs e)
+        {
+            using (var form = new DbConnectionForm())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedConnection = form.SelectedConnectionType;
+
+                    switch (selectedConnection)
+                    {
+                        case "EntityFrameWork":
+                            var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                            .UseSqlServer("Server=DESKTOP-VLCID23\\SQLEXPRESS02;Database=School;Trusted_Connection=True;TrustServerCertificate=True;")
+                            .Options;
+
+                            var context = new ApplicationDbContext(options);
+                            _repository = new EntityRepository<Course>(context);
+                            break;
+                        case "Dapper":
+                            var optionss = new DbContextOptionsBuilder<ApplicationDbContext>()
+                            .UseSqlServer("Server=DESKTOP-VLCID23\\SQLEXPRESS02;Database=School;Trusted_Connection=True;TrustServerCertificate=True;")
+                            .Options;
+
+                            var contextt = new ApplicationDbContext(optionss);
+                            _repository = new EntityRepository<Course>(contextt);
+                            break;
+                    }
+                    _schoolService = new SchoolService(_repository);
+
+                    MessageBox.Show($"Вы подключились через: {selectedConnection}");
+                    RefreshCoursesList();
+                }
+            }
         }
 
         /// <summary>

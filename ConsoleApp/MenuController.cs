@@ -206,9 +206,6 @@ namespace ConsoleApp
             Console.Write("Описание: ");
             string newCourseDescription = ReadLineWithDefault(Console.ReadLine(), excisitingCourse.Description);
 
-            Console.Write("ID курса: ");
-            string newCourseId = ReadLineWithDefault(Console.ReadLine(), excisitingCourse.Id);
-
             Console.Write("Длительность (часов): ");
             string newDuration = ReadLineWithDefault(Console.ReadLine(), Convert.ToString(excisitingCourse.Duration));
             if (!int.TryParse(newDuration, out int newCourseDuration))
@@ -233,7 +230,7 @@ namespace ConsoleApp
             if (excisitingCourse.IsActive) { courseStatus = "да"; }
             string newCourseStatus = ReadLineWithDefault(Console.ReadLine(), courseStatus);
 
-            var updateCourse = _schoolService.UpdateCourse(oldCourseId, newCourseName, newCourseDescription, newCourseId,
+            var updateCourse = _schoolService.UpdateCourse(oldCourseId, newCourseName, newCourseDescription,
                 newCourseDuration, newCoursePrice, newTeacherName, newCourseStatus);
             Console.WriteLine($"Курс успешно изменён");
             Console.WriteLine(updateCourse);

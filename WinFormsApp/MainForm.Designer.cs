@@ -31,6 +31,7 @@
             btnToggleStatus = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel3 = new TableLayoutPanel();
+            btnSelectConnection = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCourses).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -65,7 +66,6 @@
             // btnEditCourse
             // 
             btnEditCourse.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnEditCourse.Enabled = false;
             btnEditCourse.Location = new Point(223, 3);
             btnEditCourse.Name = "btnEditCourse";
             btnEditCourse.Size = new Size(214, 35);
@@ -76,7 +76,6 @@
             // btnDeleteCourse
             // 
             btnDeleteCourse.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnDeleteCourse.Enabled = false;
             btnDeleteCourse.Location = new Point(443, 3);
             btnDeleteCourse.Name = "btnDeleteCourse";
             btnDeleteCourse.Size = new Size(214, 35);
@@ -87,7 +86,7 @@
             // btnSearch
             // 
             btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnSearch.Location = new Point(3, 44);
+            btnSearch.Location = new Point(3, 49);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(214, 35);
             btnSearch.TabIndex = 3;
@@ -97,7 +96,7 @@
             // btnShowAll
             // 
             btnShowAll.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnShowAll.Location = new Point(663, 44);
+            btnShowAll.Location = new Point(663, 49);
             btnShowAll.Name = "btnShowAll";
             btnShowAll.Size = new Size(214, 35);
             btnShowAll.TabIndex = 3;
@@ -107,7 +106,7 @@
             // btnShowActive
             // 
             btnShowActive.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnShowActive.Location = new Point(443, 44);
+            btnShowActive.Location = new Point(443, 49);
             btnShowActive.Name = "btnShowActive";
             btnShowActive.Size = new Size(214, 35);
             btnShowActive.TabIndex = 2;
@@ -117,7 +116,7 @@
             // btnPriceRange
             // 
             btnPriceRange.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnPriceRange.Location = new Point(223, 44);
+            btnPriceRange.Location = new Point(223, 49);
             btnPriceRange.Name = "btnPriceRange";
             btnPriceRange.Size = new Size(214, 35);
             btnPriceRange.TabIndex = 1;
@@ -127,7 +126,6 @@
             // btnToggleStatus
             // 
             btnToggleStatus.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnToggleStatus.Enabled = false;
             btnToggleStatus.Location = new Point(663, 3);
             btnToggleStatus.Name = "btnToggleStatus";
             btnToggleStatus.Size = new Size(214, 35);
@@ -160,6 +158,7 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.Controls.Add(btnSelectConnection, 0, 2);
             tableLayoutPanel3.Controls.Add(btnDeleteCourse, 2, 0);
             tableLayoutPanel3.Controls.Add(btnToggleStatus, 3, 0);
             tableLayoutPanel3.Controls.Add(btnShowAll, 3, 1);
@@ -170,11 +169,22 @@
             tableLayoutPanel3.Controls.Add(btnSearch, 0, 1);
             tableLayoutPanel3.Location = new Point(3, 381);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 2;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 30.8270683F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 69.1729355F));
+            tableLayoutPanel3.RowCount = 3;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 51.02041F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 48.97959F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 41F));
             tableLayoutPanel3.Size = new Size(880, 133);
             tableLayoutPanel3.TabIndex = 4;
+            // 
+            // btnSelectConnection
+            // 
+            btnSelectConnection.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnSelectConnection.Location = new Point(3, 94);
+            btnSelectConnection.Name = "btnSelectConnection";
+            btnSelectConnection.Size = new Size(214, 35);
+            btnSelectConnection.TabIndex = 4;
+            btnSelectConnection.Text = "Выбрать тип подключения";
+            btnSelectConnection.Click += btnSelectConnection_Click;
             // 
             // MainForm
             // 
@@ -196,5 +206,6 @@
         private Button btnToggleStatus;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel3;
+        private Button btnSelectConnection;
     }
 }
