@@ -1,11 +1,14 @@
 ﻿using DataAccessLayer;
 using System.Data;
+using System.Data.SqlClient;
 using System;
 using Logic;
-using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Model;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal;
+using Microsoft.Identity.Client;
+using Microsoft.Data.SqlClient;
 
 namespace ConsoleApp
 {
@@ -38,15 +41,15 @@ namespace ConsoleApp
             // Dapper
             else
             {
-                //IDbConnection connection = new SqliteConnection("Data Source=courses.db");
-                //repository = new DapperRepository<Course>(connection);
+                IDbConnection connection = new SqlConnection("Server=DESKTOP-VLCID23\\SQLEXPRESS02;Database=School;Trusted_Connection=True;TrustServerCertificate=True;");
+                repository = new DapperRepository<Course>(connection);
 
                 //Заглушка
-                var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                   .UseSqlServer("Data Source=courses.db")
-                   .Options;
-                var context = new ApplicationDbContext(options);
-                repository = new EntityRepository<Course>(context);
+                //var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                //   .UseSqlServer("Data Source=courses.db")
+                //   .Options;
+                //var context = new ApplicationDbContext(options);
+                //repository = new EntityRepository<Course>(context);
 
                 Console.WriteLine("\nИспользуется репозиторий Dapper.\n");
             }

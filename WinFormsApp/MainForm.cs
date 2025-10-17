@@ -1,5 +1,7 @@
-﻿using DataAccessLayer;
+﻿using System.Data;
+using DataAccessLayer;
 using Logic;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Model;
 
@@ -302,12 +304,8 @@ namespace WinFormsApp
                             _repository = new EntityRepository<Course>(context);
                             break;
                         case "Dapper":
-                            var optionss = new DbContextOptionsBuilder<ApplicationDbContext>()
-                            .UseSqlServer("Server=DESKTOP-VLCID23\\SQLEXPRESS02;Database=School;Trusted_Connection=True;TrustServerCertificate=True;")
-                            .Options;
-
-                            var contextt = new ApplicationDbContext(optionss);
-                            _repository = new EntityRepository<Course>(contextt);
+                            IDbConnection connection = new SqlConnection("Server=DESKTOP-VLCID23\\SQLEXPRESS02;Database=School;Trusted_Connection=True;TrustServerCertificate=True;");
+                            _repository = new DapperRepository<Course>(connection);
                             break;
                     }
                     _schoolService = new SchoolService(_repository);
