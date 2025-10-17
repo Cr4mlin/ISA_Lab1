@@ -4,7 +4,7 @@
     {
         // Свойства курса
 
-        public string Id { get; set; } = string.Empty;
+        public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public int Duration { get; set; }
@@ -19,7 +19,7 @@
         public override string ToString()
         {
             string courseStatus = IsActive ? "Да" : "Нет";
-            return $"ID: {Id.Trim()}, Название: {Name.Trim()} (Преп.: {TeacherName.Trim()}, Опис.: {Description.Trim()}, Дл.: {Duration} ч., Стоимость: {Price} руб., Активен: {courseStatus})";
+            return $"ID: {Id}, Название: {Name.Trim()} (Преп.: {TeacherName.Trim()}, Опис.: {Description.Trim()}, Дл.: {Duration} ч., Стоимость: {Price} руб., Активен: {courseStatus})";
         }
     }
 }

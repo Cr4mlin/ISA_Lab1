@@ -52,9 +52,6 @@ namespace ConsoleApp
             Console.Write("Описание: ");
             string courseDescription = Console.ReadLine();
 
-            Console.Write("ID курса: ");
-            string courseId = Console.ReadLine();
-
             Console.Write("Длительность (часов): ");
             string inputCourseDuration = Console.ReadLine();
             if (string.IsNullOrEmpty(inputCourseDuration)) { inputCourseDuration = "0"; }
@@ -79,7 +76,7 @@ namespace ConsoleApp
             Console.Write("Активный(Да/Нет): ");
             string courseStatus = Console.ReadLine().ToLower();
 
-            var course = _schoolService.CreateCourse(courseName, courseDescription, courseId,
+            var course = _schoolService.CreateCourse(courseName, courseDescription,
                 courseDuration, coursePrice, teacherName, courseStatus);
             Console.WriteLine($"Курс создан успешно");
             Console.WriteLine(course);
@@ -193,9 +190,9 @@ namespace ConsoleApp
             }
 
             Console.WriteLine("Введите ID курса, который хотите обновить: ");
-            string oldCourseId = Console.ReadLine();
+            int сourseId = Convert.ToInt32(Console.ReadLine());
 
-            var excisitingCourse = _schoolService.GetCourseById(oldCourseId);
+            var excisitingCourse = _schoolService.GetCourseById(сourseId);
             Console.WriteLine($"Текущие данные: {excisitingCourse}");
 
             Console.WriteLine("Можете оставлять поля пустыми для того, чтобы не изменять параметры.");
@@ -230,7 +227,7 @@ namespace ConsoleApp
             if (excisitingCourse.IsActive) { courseStatus = "да"; }
             string newCourseStatus = ReadLineWithDefault(Console.ReadLine(), courseStatus);
 
-            var updateCourse = _schoolService.UpdateCourse(oldCourseId, newCourseName, newCourseDescription,
+            var updateCourse = _schoolService.UpdateCourse(сourseId, newCourseName, newCourseDescription,
                 newCourseDuration, newCoursePrice, newTeacherName, newCourseStatus);
             Console.WriteLine($"Курс успешно изменён");
             Console.WriteLine(updateCourse);
@@ -260,7 +257,7 @@ namespace ConsoleApp
             }
 
             Console.Write("Введите ID курса который хотите удалить: ");
-            string courseId = Console.ReadLine();
+            int courseId = Convert.ToInt32(Console.ReadLine());
 
             _schoolService.DeleteCourse(courseId);
             Console.WriteLine("Курс успешно удалён");
@@ -356,7 +353,7 @@ namespace ConsoleApp
             }
 
             Console.Write("Введите ID курса статус которого вы хотите изменить: ");
-            string courseId = Console.ReadLine();
+            int courseId = Convert.ToInt32(Console.ReadLine());
 
             _schoolService.ToggleCourseStatus(courseId);
             Console.WriteLine("Статус успешно изменён.");

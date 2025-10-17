@@ -7,7 +7,7 @@ namespace Logic
     public class SchoolService
     {
         private readonly IRepository<Course> _repository;
-
+        int _courseId = 0;
         /// <summary>
         /// Валидация имени преподавателя
         /// </summary>
@@ -69,14 +69,10 @@ namespace Logic
         /// <exception cref="InvalidDurationException">Выбрасывается при отрицательном значении продолжительности</exception>
         /// <exception cref="InvalidTeacherNameException">Выбрасывается при невозможном имени преподавателя</exception>
         /// <exception cref="InvalidIsActiveException">Выбрасывается при неверном указании состояния</exception>
-        public Course CreateCourse(string courseName, string descripton, string courseId,
+        public Course CreateCourse(string courseName, string descripton,
                                    int duration, decimal price, string teacherName, string status)
         {
-            if (_repository.ReadById(courseId) != null)
-            {
-                throw new CourseIdExistsException(courseId);
-            }
-
+            _courseId += 1;
             if (price < 0)
             {
                 throw new InvalidPriceException(price);
@@ -105,7 +101,7 @@ namespace Logic
             var newCourse = new Course
             {
                 Name = courseName,
-                Id = courseId,
+                Id = _courseId,
                 Description = descripton,
                 Duration = duration,
                 Price = price,
@@ -133,10 +129,10 @@ namespace Logic
         /// <exception cref="InvalidDurationException">Выбрасывается при отрицательном значении продолжительности</exception>
         /// <exception cref="InvalidTeacherNameException">Выбрасывается при невозможном имени преподавателя</exception>
         /// <exception cref="InvalidIsActiveException">Выбрасывается при неверном указании состояния</exception>
-        public Course UpdateCourse(string oldId, string courseName, string description,
+        public Course UpdateCourse(int courseId, string courseName, string description,
                                   int duration, decimal price, string teacherName, string status)
         {
-            var existingCourse = _repository.ReadById(oldId);
+            var existingCourse = _repository.ReadById(courseId);
 
             bool isActive = true;
 
@@ -206,14 +202,6 @@ namespace Logic
                 { "Идентификатор", "Id" }
             };
 
-            //foreach (string property in searchProperties)
-            //{
-            //    if (!IsValidSearchProperties(property))
-            //    {
-            //        throw new PropertyNotFoundException(property);
-            //    }
-            //}
-
             var allCourses = _repository.ReadAll(); 
             List<Course> filteredCourses = allCourses.Where(course =>
             {
@@ -240,7 +228,7 @@ namespace Logic
         /// </summary>
         /// <param name="courseId">ID курса</param>
         /// <returns>Если курс удалён, то возвращает true, иначе false</returns>
-        public bool DeleteCourse(string courseId)
+        public bool DeleteCourse(int courseId)
         {
             var courseToRemove = _repository.ReadById(courseId);
             if (courseToRemove != null)
@@ -261,7 +249,7 @@ namespace Logic
         /// Возвращает курс с таким же ID, какое было передано в функцию
         /// </summary>
         /// <returns>Course</returns>
-        public Course GetCourseById(string id) => _repository.ReadById(id);
+        public Course GetCourseById(int id) => _repository.ReadById(id);
 
         /// <summary>
         /// Возвращает список активных курсов
@@ -295,10 +283,11 @@ namespace Logic
         /// Функция для переключения состояния курса
         /// </summary>
         /// <param name="courseId">ID курса</param>
-        public void ToggleCourseStatus(string courseId)
+        public void ToggleCourseStatus(int courseId)
         {
             var course = _repository.ReadById(courseId);
             course.IsActive = !course.IsActive;
+            _repository.Update(course);
         }
     }
 }

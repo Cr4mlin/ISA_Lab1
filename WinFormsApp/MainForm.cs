@@ -139,7 +139,7 @@ namespace WinFormsApp
                                 {
                                     try
                                     {
-                                        if (_schoolService.DeleteCourse(courseId))
+                                        if (_schoolService.DeleteCourse(Convert.ToInt32(courseId)))
                                         {
                                             deletedCount++;
                                         }
@@ -221,7 +221,7 @@ namespace WinFormsApp
                     {
                         try
                         {
-                            _schoolService.ToggleCourseStatus(courseId);
+                            _schoolService.ToggleCourseStatus(Convert.ToInt32(courseId));
                             RefreshCoursesList();
                             MessageBox.Show("Статус курса изменен", "Успех",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);

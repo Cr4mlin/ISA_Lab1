@@ -3,14 +3,14 @@
     /// <summary>
     /// Исключение для случая, когда курс с таким кодом уже существует.
     /// </summary>
-    public class CourseIdExistsException : Exception
-    {
-        /// <summary>
-        /// Исключение для случая, когда курс с таким кодом уже существует.
-        /// </summary>
-        public CourseIdExistsException(string courseId)
-            : base($"Курс с ID '{courseId}' уже существует.") { }
-    }
+    //public class CourseIdExistsException : Exception
+    //{
+    //    /// <summary>
+    //    /// Исключение для случая, когда курс с таким кодом уже существует.
+    //    /// </summary>
+    //    public CourseIdExistsException(string courseId)
+    //        : base($"Курс с ID '{courseId}' уже существует.") { }
+    //}
 
     /// <summary>
     /// Исключение для недопустимой стоимости курса.

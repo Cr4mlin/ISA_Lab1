@@ -3,8 +3,6 @@
     partial class AddEditCourseForm
     {
         private System.ComponentModel.IContainer components = null;
-        private Label lblId;
-        private TextBox txtId;
         private Label lblName;
         private TextBox txtName;
         private Label lblDescription;
@@ -33,8 +31,6 @@
         private void InitializeComponent()
         {
             tableLayoutPanel = new TableLayoutPanel();
-            lblId = new Label();
-            txtId = new TextBox();
             lblName = new Label();
             txtName = new TextBox();
             lblDescription = new Label();
@@ -59,8 +55,6 @@
             tableLayoutPanel.ColumnCount = 2;
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
-            tableLayoutPanel.Controls.Add(lblId, 0, 0);
-            tableLayoutPanel.Controls.Add(txtId, 1, 0);
             tableLayoutPanel.Controls.Add(lblName, 0, 1);
             tableLayoutPanel.Controls.Add(txtName, 1, 1);
             tableLayoutPanel.Controls.Add(lblDescription, 0, 2);
@@ -87,25 +81,6 @@
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             tableLayoutPanel.Size = new Size(500, 350);
             tableLayoutPanel.TabIndex = 2;
-            // 
-            // lblId
-            // 
-            lblId.Dock = DockStyle.Fill;
-            lblId.Location = new Point(3, 0);
-            lblId.Name = "lblId";
-            lblId.Size = new Size(144, 40);
-            lblId.TabIndex = 0;
-            lblId.Text = "ID курса:";
-            lblId.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // txtId
-            // 
-            txtId.Dock = DockStyle.Fill;
-            txtId.Location = new Point(153, 5);
-            txtId.Margin = new Padding(3, 5, 3, 5);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(344, 27);
-            txtId.TabIndex = 1;
             // 
             // lblName
             // 

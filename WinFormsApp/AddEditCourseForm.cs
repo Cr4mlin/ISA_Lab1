@@ -44,8 +44,6 @@ namespace WinFormsApp
             if (_existingCourse == null) return;
 
             var courseType = _existingCourse.GetType();
-
-            txtId.Text = courseType.GetProperty("Id")?.GetValue(_existingCourse)?.ToString() ?? "";
             txtName.Text = courseType.GetProperty("Name")?.GetValue(_existingCourse)?.ToString() ?? "";
             txtDescription.Text = courseType.GetProperty("Description")?.GetValue(_existingCourse)?.ToString() ?? "";
 
@@ -85,11 +83,11 @@ namespace WinFormsApp
 
                 if (_isEditMode)
                 {
-                    var oldId = _existingCourse.GetType().GetProperty("Id")?.GetValue(_existingCourse)?.ToString();
-                    if (string.IsNullOrEmpty(oldId)) throw new InvalidOperationException("Не удалось получить ID курса");
+                    int courseId = Convert.ToInt32(_existingCourse.GetType().GetProperty("Id")?.GetValue(_existingCourse));
+                    //if (string.IsNullOrEmpty(oldId)) throw new InvalidOperationException("Не удалось получить ID курса");
 
                     _schoolService.UpdateCourse(
-                        oldId.Trim(),
+                        courseId,
                         txtName.Text.Trim(),
                         txtDescription.Text.Trim(),
                         //txtId.Text.Trim(),
@@ -106,7 +104,6 @@ namespace WinFormsApp
                     _schoolService.CreateCourse(
                         txtName.Text.Trim(),
                         txtDescription.Text.Trim(),
-                        txtId.Text.Trim(),
                         (int)numDuration.Value,
                         numPrice.Value,
                         txtTeacher.Text.Trim(),
@@ -118,11 +115,6 @@ namespace WinFormsApp
 
                 DialogResult = DialogResult.OK;
                 Close();
-            }
-            catch (CourseIdExistsException ex)
-            {
-                MessageBox.Show($"Ошибка: {ex.Message}", "Дублирование ID",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (InvalidPriceException ex)
             {
@@ -162,14 +154,6 @@ namespace WinFormsApp
         /// <returns>True если данные валидны, иначе False</returns>
         private bool ValidateForm()
         {
-            if (string.IsNullOrWhiteSpace(txtId.Text))
-            {
-                MessageBox.Show("Введите ID курса", "Ошибка валидации",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtId.Focus();
-                return false;
-            }
-
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
                 MessageBox.Show("Введите название курса", "Ошибка валидации",

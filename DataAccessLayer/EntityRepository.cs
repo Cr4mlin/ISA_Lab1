@@ -26,7 +26,7 @@ namespace DataAccessLayer
             _context.SaveChanges();
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             var entity = ReadById(id);
             _dbSet.Remove(entity);
@@ -38,7 +38,7 @@ namespace DataAccessLayer
             return _dbSet.ToList();
         }
 
-        public T ReadById(string id)
+        public T ReadById(int id)
         {
             return _dbSet.FirstOrDefault(e => e.Id == id);
                 //?? throw new Exception($"Объект с Id={id} не найден");

@@ -27,7 +27,7 @@ namespace DataAccessLayer
             _connection.Execute(sql, entity);
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
             var tableName = typeof(T).Name + "s";
             _connection.Execute($"DELETE FROM {tableName} WHERE Id = @id", new { id });
@@ -39,7 +39,7 @@ namespace DataAccessLayer
             return _connection.Query<T>($"SELECT * FROM {tableName}").ToList();
         }
 
-        public T ReadById(string id)
+        public T ReadById(int id)
         {
             var tableName = typeof(T).Name + "s";
             return _connection.QuerySingleOrDefault<T>($"SELECT * FROM {tableName} WHERE Id = @id", new { id });

@@ -8,6 +8,6 @@ namespace Model
 {
     public interface IDomainObject
     {
-        string Id { get; set; }
+        int Id { get; set; }
     }
 }
