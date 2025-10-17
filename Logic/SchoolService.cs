@@ -7,7 +7,6 @@ namespace Logic
     public class SchoolService
     {
         private readonly IRepository<Course> _repository;
-        int _courseId = 0;
         /// <summary>
         /// Валидация имени преподавателя
         /// </summary>
@@ -72,7 +71,6 @@ namespace Logic
         public Course CreateCourse(string courseName, string descripton,
                                    int duration, decimal price, string teacherName, string status)
         {
-            _courseId += 1;
             if (price < 0)
             {
                 throw new InvalidPriceException(price);
@@ -101,7 +99,6 @@ namespace Logic
             var newCourse = new Course
             {
                 Name = courseName,
-                Id = _courseId,
                 Description = descripton,
                 Duration = duration,
                 Price = price,

@@ -101,10 +101,10 @@ namespace ConsoleApp
                                 break;
                         }
                     }
-                    catch (CourseIdExistsException ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
+                    //catch (CourseIdExistsException ex)
+                    //{
+                    //    Console.WriteLine(ex.Message);
+                    //}
                     catch (InvalidDurationException ex)
                     {
                         Console.WriteLine(ex.Message);

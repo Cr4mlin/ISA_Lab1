@@ -23,7 +23,7 @@ namespace DataAccessLayer
         public void Add(T entity)
         {
             var tableName = typeof(T).Name + "s";
-            var sql = $"INSERT INTO {tableName} (Id, Name, Description, Duration, Price, TeacherName, IsActive) VALUES (@Id, @Name, @Description, @Duration, @Price, @TeacherName, @IsActive)";
+            var sql = $"INSERT INTO {tableName} (Name, Description, Duration, Price, TeacherName, IsActive) VALUES (@Name, @Description, @Duration, @Price, @TeacherName, @IsActive)";
             _connection.Execute(sql, entity);
         }
 
