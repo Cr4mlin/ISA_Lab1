@@ -14,6 +14,9 @@ namespace ConsoleApp
 {
     internal class Program
     {
+        /// <summary>
+        /// Главная точка входа в консольное приложение системы управления курсами
+        /// </summary>
         static void Main()
         {
             Console.WriteLine("---СИСТЕМА УПРАВЛЕНИЯ КУРСАМИ---\n");

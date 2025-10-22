@@ -11,6 +11,9 @@ namespace ConsoleApp
             _schoolService = schoolService;
         }
 
+        /// <summary>
+        /// Отображает меню выбора типа репозитория для работы с базой данных
+        /// </summary>
         public void ChoiceRepository()
         {
             Console.WriteLine("---СИСТЕМА УПРАВЛЕНИЯ КУРСАМИ---\n");

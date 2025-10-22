@@ -48,25 +48,28 @@ namespace Logic
             return false;
         }
 
+        /// <summary>
+        /// Инициализирует новый экземпляр сервиса управления курсами
+        /// </summary>
+        /// <param name="repository">Репозиторий для работы с курсами</param>
         public SchoolService(IRepository<Course> repository)
         {
             _repository = repository;
         }
 
         /// <summary>
-        /// Создаёт курс с заданными параметрами.
+        /// Создаёт новый курс с заданными параметрами
         /// </summary>
         /// <param name="courseName">Название курса</param>
         /// <param name="descripton">Описание курса</param>
-        /// <param name="courseId">ID курса</param>
-        /// <param name="duration">Длительность курса</param>
+        /// <param name="duration">Длительность курса в часах</param>
         /// <param name="price">Стоимость курса</param>
         /// <param name="teacherName">Имя преподавателя</param>
-        /// <param name="status">Состояние курса</param>
-        /// <exception cref="CourseIdExistsException">Выбрасывается при дублировании кода курса</exception>
+        /// <param name="status">Состояние курса (да/нет)</param>
+        /// <returns>Созданный курс</returns>
         /// <exception cref="InvalidPriceException">Выбрасывается при отрицательном значении цены</exception>
         /// <exception cref="InvalidDurationException">Выбрасывается при отрицательном значении продолжительности</exception>
-        /// <exception cref="InvalidTeacherNameException">Выбрасывается при невозможном имени преподавателя</exception>
+        /// <exception cref="InvalidTeacherNameException">Выбрасывается при невалидном имени преподавателя</exception>
         /// <exception cref="InvalidIsActiveException">Выбрасывается при неверном указании состояния</exception>
         public Course CreateCourse(string courseName, string descripton,
                                    int duration, decimal price, string teacherName, string status)
@@ -111,20 +114,19 @@ namespace Logic
         }
 
         /// <summary>
-        /// Функция для изменения существующего курса (сущности)
+        /// Обновляет существующий курс с заданными параметрами
         /// </summary>
-        /// <param name="oldId">Старое ID курса</param>
+        /// <param name="courseId">ID курса для обновления</param>
         /// <param name="courseName">Название курса</param>
         /// <param name="description">Описание курса</param>
-        /// <param name="courseId">ID курса</param>
-        /// <param name="duration">Длительность курса</param>
+        /// <param name="duration">Длительность курса в часах</param>
         /// <param name="price">Стоимость курса</param>
         /// <param name="teacherName">Имя преподавателя</param>
-        /// <param name="status">Состояние курса</param>
-        /// <exception cref="CourseIdExistsException">Выбрасывается при дублировании кода курса</exception>
+        /// <param name="status">Состояние курса (да/нет)</param>
+        /// <returns>Обновленный курс</returns>
         /// <exception cref="InvalidPriceException">Выбрасывается при отрицательном значении цены</exception>
         /// <exception cref="InvalidDurationException">Выбрасывается при отрицательном значении продолжительности</exception>
-        /// <exception cref="InvalidTeacherNameException">Выбрасывается при невозможном имени преподавателя</exception>
+        /// <exception cref="InvalidTeacherNameException">Выбрасывается при невалидном имени преподавателя</exception>
         /// <exception cref="InvalidIsActiveException">Выбрасывается при неверном указании состояния</exception>
         public Course UpdateCourse(int courseId, string courseName, string description,
                                   int duration, decimal price, string teacherName, string status)
@@ -169,13 +171,12 @@ namespace Logic
         }
 
         /// <summary>
-        /// Возвращает список курсов найденных по выбранным свойствам
+        /// Выполняет поиск курсов по заданному тексту и свойствам
         /// </summary>
-        /// <param name="searchText">Текст поиска</param>
-        /// <param name="searchProperties">Свойства по которым производится поиск</param>
-        /// <returns>List<Course></returns>
-        /// <exception cref="ArgumentException">Вылазит если поле пустое</exception>
-        /// <exception cref="PropertyNotFoundException">Выскакивает если свойство не найдено</exception>
+        /// <param name="searchText">Текст для поиска</param>
+        /// <param name="searchProperties">Список свойств для поиска</param>
+        /// <returns>Список найденных курсов</returns>
+        /// <exception cref="ArgumentException">Выбрасывается если поле поиска пустое или не выбрано ни одного свойства</exception>
         public List<Course> SearchCourses(string searchText, List<string> searchProperties)
         {
             if (string.IsNullOrEmpty(searchText))
@@ -221,10 +222,10 @@ namespace Logic
         }
 
         /// <summary>
-        /// Удаляет курс
+        /// Удаляет курс по указанному идентификатору
         /// </summary>
-        /// <param name="courseId">ID курса</param>
-        /// <returns>Если курс удалён, то возвращает true, иначе false</returns>
+        /// <param name="courseId">Идентификатор курса для удаления</param>
+        /// <returns>true если курс успешно удален, иначе false</returns>
         public bool DeleteCourse(int courseId)
         {
             var courseToRemove = _repository.ReadById(courseId);
@@ -243,9 +244,10 @@ namespace Logic
         public List<Course> GetAllCourses() => _repository.ReadAll();
 
         /// <summary>
-        /// Возвращает курс с таким же ID, какое было передано в функцию
+        /// Находит курс по указанному идентификатору
         /// </summary>
-        /// <returns>Course</returns>
+        /// <param name="id">Идентификатор курса</param>
+        /// <returns>Найденный курс или null, если не найден</returns>
         public Course GetCourseById(int id) => _repository.ReadById(id);
 
         /// <summary>
@@ -261,9 +263,12 @@ namespace Logic
         }
 
         /// <summary>
-        /// Возвращает список всех курсов входящих в указанный ценовой диапазон
+        /// Возвращает список курсов в указанном ценовом диапазоне
         /// </summary>
-        /// <returns>List<Course></returns>
+        /// <param name="minPrice">Минимальная цена</param>
+        /// <param name="maxPrice">Максимальная цена</param>
+        /// <returns>Список курсов в заданном ценовом диапазоне</returns>
+        /// <exception cref="InvalidPriceRangeException">Выбрасывается при неверном ценовом диапазоне</exception>
         public List<Course> GetCoursesInPriceRange(decimal minPrice, decimal maxPrice)
         {
             if (minPrice < 0 || maxPrice < 0 || minPrice > maxPrice)
@@ -277,9 +282,9 @@ namespace Logic
         }
 
         /// <summary>
-        /// Функция для переключения состояния курса
+        /// Переключает статус активности курса (активный/неактивный)
         /// </summary>
-        /// <param name="courseId">ID курса</param>
+        /// <param name="courseId">Идентификатор курса</param>
         public void ToggleCourseStatus(int courseId)
         {
             var course = _repository.ReadById(courseId);

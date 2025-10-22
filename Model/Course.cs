@@ -12,9 +12,9 @@
         public bool IsActive { get; set; } = true;
 
         /// <summary>
-        /// Переопределяет вывод сущности (Добавлено на всякий случай)
+        /// Возвращает строковое представление курса
         /// </summary>
-        /// <returns>string</returns>
+        /// <returns>Строковое представление курса с основной информацией</returns>
         public override string ToString()
         {
             string courseStatus = IsActive ? "Да" : "Нет";
