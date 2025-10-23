@@ -4,13 +4,15 @@ using Logic;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Model;
+using WinFormsApp.Services;
+using WinFormsApp.Controllers;
+using WinFormsApp.Views;
 
 namespace WinFormsApp
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IMainFormView
     {
-        private SchoolService _schoolService;
-        private IRepository<Course> _repository;
+        private IMainFormController _controller;
 
         /// <summary>
         /// Инициализирует главную форму приложения
@@ -25,18 +27,8 @@ namespace WinFormsApp
         /// </summary>
         private void RefreshCoursesList()
         {
-            try
-            {
-                var courses = _schoolService.GetAllCourses();
-                dataGridViewCourses.DataSource = courses;
-                ConfigureDataGridView();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка при загрузке курсов: {ex.Message}", "Ошибка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-}
+            _controller?.RefreshCourses();
+        }
 
         /// <summary>
         /// Настраивает отображение колонок в DataGridView
@@ -57,16 +49,113 @@ namespace WinFormsApp
             }
         }
 
+        #region IMainFormView Implementation
+
+        /// <summary>
+        /// Отображает список курсов
+        /// </summary>
+        /// <param name="courses">Список курсов</param>
+        public void DisplayCourses(List<Course> courses)
+        {
+            dataGridViewCourses.DataSource = courses;
+            ConfigureDataGridView();
+        }
+
+        /// <summary>
+        /// Открывает диалог добавления курса
+        /// </summary>
+        public void OpenAddCourseDialog()
+        {
+            // Получаем SchoolService из контроллера
+            var schoolService = GetSchoolServiceFromController();
+            if (schoolService != null)
+            {
+                var addForm = new AddEditCourseForm(schoolService);
+                if (addForm.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshCoursesList();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Открывает диалог редактирования курса
+        /// </summary>
+        /// <param name="course">Курс для редактирования</param>
+        public void OpenEditCourseDialog(Course course)
+        {
+            // Получаем SchoolService из контроллера
+            var schoolService = GetSchoolServiceFromController();
+            if (schoolService != null)
+            {
+                var editForm = new AddEditCourseForm(schoolService, course);
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshCoursesList();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Получает SchoolService из контроллера
+        /// </summary>
+        /// <returns>SchoolService или null</returns>
+        private SchoolService GetSchoolServiceFromController()
+        {
+            if (_controller is MainFormController controller)
+            {
+                // Получаем SchoolService через рефлексию или создаем новый
+                // Для простоты создаем новый через DependencyContainer
+                return WinFormsDependencyContainer.CreateSchoolService(true); // По умолчанию Entity Framework
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Показывает сообщение об ошибке
+        /// </summary>
+        /// <param name="message">Сообщение</param>
+        public void ShowError(string message)
+        {
+            MessageBox.Show(message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        /// <summary>
+        /// Показывает сообщение об успехе
+        /// </summary>
+        /// <param name="message">Сообщение</param>
+        public void ShowSuccess(string message)
+        {
+            MessageBox.Show(message, "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Показывает информационное сообщение
+        /// </summary>
+        /// <param name="message">Сообщение</param>
+        public void ShowInfo(string message)
+        {
+            MessageBox.Show(message, "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Запрашивает подтверждение
+        /// </summary>
+        /// <param name="message">Сообщение</param>
+        /// <returns>true если пользователь подтвердил</returns>
+        public bool ConfirmAction(string message)
+        {
+            return MessageBox.Show(message, "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+        }
+
+        #endregion
+
         /// <summary>
         /// Обработчик нажатия кнопки добавления курса
         /// </summary>
         private void btnAddCourse_Click(object sender, EventArgs e)
         {
-            var addForm = new AddEditCourseForm(_schoolService);
-            if (addForm.ShowDialog() == DialogResult.OK)
-            {
-                RefreshCoursesList();
-            }
+            _controller?.OpenAddCourseForm();
         }
 
         /// <summary>
@@ -76,20 +165,15 @@ namespace WinFormsApp
         {
             if (dataGridViewCourses.SelectedRows.Count > 0)
             {
-                var selectedCourse = dataGridViewCourses.SelectedRows[0].DataBoundItem;
+                var selectedCourse = dataGridViewCourses.SelectedRows[0].DataBoundItem as Course;
                 if (selectedCourse != null)
                 {
-                    var editForm = new AddEditCourseForm(_schoolService, selectedCourse);
-                    if (editForm.ShowDialog() == DialogResult.OK)
-                    {
-                        RefreshCoursesList();
-                    }
+                    _controller?.OpenEditCourseForm(selectedCourse);
                 }
             }
             else
             {
-                MessageBox.Show("Выберите курс для редактирования", "Информация",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ShowInfo("Выберите курс для редактирования");
             }
         }
 
@@ -100,95 +184,31 @@ namespace WinFormsApp
         {
             if (dataGridViewCourses.SelectedRows.Count > 0)
             {
-                if (dataGridViewCourses.SelectedRows.Count > 0)
+                var courseIds = new List<int>();
+                foreach (DataGridViewRow row in dataGridViewCourses.SelectedRows)
                 {
-                    var selectedCourses = new List<object>();
-                    var courseIds = new List<string>();
-
-                    foreach (DataGridViewRow row in dataGridViewCourses.SelectedRows)
+                    if (row.DataBoundItem is Course course)
                     {
-                        if (row.DataBoundItem != null)
-                        {
-                            selectedCourses.Add(row.DataBoundItem);
-                            var courseId = row.DataBoundItem.GetType().GetProperty("Id")?.GetValue(row.DataBoundItem)?.ToString();
-                            if (!string.IsNullOrEmpty(courseId))
-                            {
-                                courseIds.Add(courseId);
-                            }
-                        }
-                    }
-
-                    if (courseIds.Count > 0)
-                    {
-                        string message = courseIds.Count == 1
-                            ? "Вы уверены, что хотите удалить выбранный курс?"
-                            : $"Вы уверены, что хотите удалить {courseIds.Count} выбранных курсов?";
-
-                        var result = MessageBox.Show(message, "Подтверждение удаления",
-                            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                        if (result == DialogResult.Yes)
-                        {
-                            try
-                            {
-                                int deletedCount = 0;
-                                var errors = new List<string>();
-
-                                // Удаляем курсы по одному, собирая ошибки
-                                foreach (var courseId in courseIds)
-                                {
-                                    try
-                                    {
-                                        if (_schoolService.DeleteCourse(Convert.ToInt32(courseId)))
-                                        {
-                                            deletedCount++;
-                                        }
-                                    }
-                                    catch (CourseNotFoundException ex)
-                                    {
-                                        errors.Add($"Курс с ID '{courseId}' не найден: {ex.Message}");
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        errors.Add($"Ошибка при удалении курса '{courseId}': {ex.Message}");
-                                    }
-                                }
-
-                                // Показываем результат операции
-                                string resultMessage = $"Успешно удалено курсов: {deletedCount}";
-                                if (errors.Count > 0)
-                                {
-                                    resultMessage += $"\nОшибок: {errors.Count}";
-                                    if (errors.Count <= 5) // Показываем первые 5 ошибок
-                                    {
-                                        resultMessage += "\n\n" + string.Join("\n", errors.Take(5));
-                                    }
-                                    else
-                                    {
-                                        resultMessage += $"\n\nПервые 5 ошибок:\n" + string.Join("\n", errors.Take(5));
-                                        resultMessage += $"\n... и еще {errors.Count - 5} ошибок";
-                                    }
-                                }
-
-                                RefreshCoursesList();
-
-                                MessageBox.Show(resultMessage, "Результат удаления",
-                                    deletedCount > 0 ? MessageBoxButtons.OK : MessageBoxButtons.OK,
-                                    deletedCount > 0 ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show($"Общая ошибка при удалении курсов: {ex.Message}", "Ошибка",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
+                        courseIds.Add(course.Id);
                     }
                 }
-            }   
+
+                if (courseIds.Count > 0)
+                {
+                    string message = courseIds.Count == 1
+                        ? "Вы уверены, что хотите удалить выбранный курс?"
+                        : $"Вы уверены, что хотите удалить {courseIds.Count} выбранных курсов?";
+
+                    if (ConfirmAction(message))
+                    {
+                        _controller?.DeleteSelectedCourses(courseIds);
+                        RefreshCoursesList();
+                    }
+                }
+            }
             else
             {
-                MessageBox.Show("Выберите курс для удаления", "Информация",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ShowInfo("Выберите курс для удаления");
             }
         }
 
@@ -197,11 +217,15 @@ namespace WinFormsApp
         /// </summary>
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var searchForm = new SearchForm(_schoolService);
-            if (searchForm.ShowDialog() == DialogResult.OK)
+            var schoolService = GetSchoolServiceFromController();
+            if (schoolService != null)
             {
-                dataGridViewCourses.DataSource = searchForm.SearchResults;
-                ConfigureDataGridView();
+                var searchForm = new SearchForm(schoolService);
+                if (searchForm.ShowDialog() == DialogResult.OK)
+                {
+                    dataGridViewCourses.DataSource = searchForm.SearchResults;
+                    ConfigureDataGridView();
+                }
             }
         }
 
@@ -212,37 +236,15 @@ namespace WinFormsApp
         {
             if (dataGridViewCourses.SelectedRows.Count > 0)
             {
-                var selectedCourse = dataGridViewCourses.SelectedRows[0].DataBoundItem;
+                var selectedCourse = dataGridViewCourses.SelectedRows[0].DataBoundItem as Course;
                 if (selectedCourse != null)
                 {
-                    var courseId = selectedCourse.GetType().GetProperty("Id")?.GetValue(selectedCourse)?.ToString();
-
-                    if (!string.IsNullOrEmpty(courseId))
-                    {
-                        try
-                        {
-                            _schoolService.ToggleCourseStatus(Convert.ToInt32(courseId));
-                            RefreshCoursesList();
-                            MessageBox.Show("Статус курса изменен", "Успех",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        catch (CourseNotFoundException ex)
-                        {
-                            MessageBox.Show($"Ошибка: {ex.Message}", "Курс не найден",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Ошибка при изменении статуса: {ex.Message}", "Ошибка",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
+                    _controller?.ToggleCourseStatus(selectedCourse.Id);
                 }
             }
             else
             {
-                MessageBox.Show("Выберите курс для изменения статуса", "Информация",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ShowInfo("Выберите курс для изменения статуса");
             }
         }
 
@@ -251,11 +253,15 @@ namespace WinFormsApp
         /// </summary>
         private void btnPriceRange_Click(object sender, EventArgs e)
         {
-            var priceForm = new PriceRangeForm(_schoolService);
-            if (priceForm.ShowDialog() == DialogResult.OK)
+            var schoolService = GetSchoolServiceFromController();
+            if (schoolService != null)
             {
-                dataGridViewCourses.DataSource = priceForm.FilteredCourses;
-                ConfigureDataGridView();
+                var priceForm = new PriceRangeForm(schoolService);
+                if (priceForm.ShowDialog() == DialogResult.OK)
+                {
+                    dataGridViewCourses.DataSource = priceForm.FilteredCourses;
+                    ConfigureDataGridView();
+                }
             }
         }
 
@@ -266,14 +272,17 @@ namespace WinFormsApp
         {
             try
             {
-                var activeCourses = _schoolService.GetActiveCourses();
-                dataGridViewCourses.DataSource = activeCourses;
-                ConfigureDataGridView();
+                var schoolService = GetSchoolServiceFromController();
+                if (schoolService != null)
+                {
+                    var activeCourses = schoolService.GetActiveCourses();
+                    dataGridViewCourses.DataSource = activeCourses;
+                    ConfigureDataGridView();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке активных курсов: {ex.Message}", "Ошибка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowError($"Ошибка при загрузке активных курсов: {ex.Message}");
             }
         }
 
@@ -293,22 +302,12 @@ namespace WinFormsApp
                 {
                     string selectedConnection = form.SelectedConnectionType;
 
-                    switch (selectedConnection)
-                    {
-                        case "EntityFrameWork":
-                            var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                            .UseSqlServer("Server=DESKTOP-VLCID23\\SQLEXPRESS02;Database=School;Trusted_Connection=True;TrustServerCertificate=True;")
-                            .Options;
-
-                            var context = new ApplicationDbContext(options);
-                            _repository = new EntityRepository<Course>(context);
-                            break;
-                        case "Dapper":
-                            IDbConnection connection = new SqlConnection("Server=DESKTOP-VLCID23\\SQLEXPRESS02;Database=School;Trusted_Connection=True;TrustServerCertificate=True;");
-                            _repository = new DapperRepository<Course>(connection);
-                            break;
-                    }
-                    _schoolService = new SchoolService(_repository);
+                    bool useEntityFramework = selectedConnection == "EntityFrameWork";
+                    var schoolService = WinFormsDependencyContainer.CreateSchoolService(useEntityFramework);
+                    
+                    // Инициализируем контроллер
+                    var courseFormService = new CourseFormService(schoolService);
+                    _controller = new MainFormController(courseFormService, this);
 
                     MessageBox.Show($"Вы подключились через: {selectedConnection}");
                     RefreshCoursesList();

@@ -12,26 +12,30 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public class DapperRepository<T> : IRepository<T> where T : class, IDomainObject
+    public class DapperRepository<T> : BaseRepository<T> where T : class, IDomainObject
     {
         private readonly IDbConnection _connection;
+        private readonly SqlQueryBuilder<T> _queryBuilder;
+
         /// <summary>
         /// Инициализирует новый экземпляр репозитория Dapper
         /// </summary>
-        /// <param name="connectionString">Строка подключения к базе данных</param>
-        public DapperRepository(IDbConnection connectionString)
+        /// <param name="connection">Соединение с базой данных</param>
+        /// <param name="queryBuilder">Построитель SQL-запросов</param>
+        public DapperRepository(IDbConnection connection, SqlQueryBuilder<T> queryBuilder)
         {
-            _connection = connectionString;
+            _connection = connection;
+            _queryBuilder = queryBuilder;
         }
 
         /// <summary>
         /// Добавляет новую сущность в базу данных через Dapper
         /// </summary>
         /// <param name="entity">Сущность для добавления</param>
-        public void Add(T entity)
+        public override void Add(T entity)
         {
-            var tableName = typeof(T).Name + "s";
-            var sql = $"INSERT INTO {tableName} (Name, Description, Duration, Price, TeacherName, IsActive) VALUES (@Name, @Description, @Duration, @Price, @TeacherName, @IsActive)";
+            ValidateEntity(entity);
+            var sql = _queryBuilder.BuildInsertQuery();
             _connection.Execute(sql, entity);
         }
 
@@ -39,20 +43,22 @@ namespace DataAccessLayer
         /// Удаляет сущность по идентификатору через Dapper
         /// </summary>
         /// <param name="id">Идентификатор сущности для удаления</param>
-        public void Delete(int id)
+        public override void Delete(int id)
         {
-            var tableName = typeof(T).Name + "s";
-            _connection.Execute($"DELETE FROM {tableName} WHERE Id = @id", new { id });
+            if (!Exists(id))
+                throw new ArgumentException($"Сущность с ID {id} не найдена");
+            var sql = _queryBuilder.BuildDeleteQuery();
+            _connection.Execute(sql, new { id });
         }
 
         /// <summary>
         /// Возвращает все сущности из базы данных через Dapper
         /// </summary>
         /// <returns>Список всех сущностей</returns>
-        public List<T> ReadAll()
+        public override List<T> ReadAll()
         {
-            var tableName = typeof(T).Name + "s";
-            return _connection.Query<T>($"SELECT * FROM {tableName}").ToList();
+            var sql = _queryBuilder.BuildSelectAllQuery();
+            return _connection.Query<T>(sql).ToList();
         }
 
         /// <summary>
@@ -60,23 +66,20 @@ namespace DataAccessLayer
         /// </summary>
         /// <param name="id">Идентификатор сущности</param>
         /// <returns>Найденная сущность или null, если не найдена</returns>
-        public T ReadById(int id)
+        public override T ReadById(int id)
         {
-            var tableName = typeof(T).Name + "s";
-            return _connection.QuerySingleOrDefault<T>($"SELECT * FROM {tableName} WHERE Id = @id", new { id });
+            var sql = _queryBuilder.BuildSelectByIdQuery();
+            return _connection.QuerySingleOrDefault<T>(sql, new { id });
         }
 
         /// <summary>
         /// Обновляет существующую сущность в базе данных через Dapper
         /// </summary>
         /// <param name="entity">Сущность для обновления</param>
-        public void Update(T entity)
+        public override void Update(T entity)
         {
-            var tableName = typeof(T).Name + "s";
-            var sql = $@"UPDATE {tableName} 
-                         SET Name=@Name, Description=@Description, Duration=@Duration, 
-                             Price=@Price, TeacherName=@TeacherName, IsActive=@IsActive 
-                         WHERE Id=@Id";
+            ValidateEntity(entity);
+            var sql = _queryBuilder.BuildUpdateQuery();
             _connection.Execute(sql, entity);
         }
     }

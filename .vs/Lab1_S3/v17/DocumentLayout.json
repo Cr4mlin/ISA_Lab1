@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\logic\\services\\coursesearchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|solutionrelative:logic\\services\\coursesearchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\winformsapp\\services\\courseformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\services\\courseformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\winformsapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\winformsapp\\winformsdependencycontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\winformsdependencycontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8AE7843-5803-49DD-B8B6-AD2C00B22737}|Model\\Model.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\model\\idomainobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AE7843-5803-49DD-B8B6-AD2C00B22737}|Model\\Model.csproj|solutionrelative:model\\idomainobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\dataaccesslayer\\coursesqlquerybuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7A206E3-94A9-4B5D-A54D-BCA84651FC72}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\coursesqlquerybuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +51,84 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CourseSearchService.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\Services\\CourseSearchService.cs",
+              "RelativeDocumentMoniker": "Logic\\Services\\CourseSearchService.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\Services\\CourseSearchService.cs",
+              "RelativeToolTip": "Logic\\Services\\CourseSearchService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T16:29:42.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CourseFormService.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\Services\\CourseFormService.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\Services\\CourseFormService.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\Services\\CourseFormService.cs",
+              "RelativeToolTip": "WinFormsApp\\Services\\CourseFormService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T16:29:15.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WinFormsDependencyContainer.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\WinFormsDependencyContainer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\WinFormsDependencyContainer.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\WinFormsDependencyContainer.cs",
+              "RelativeToolTip": "WinFormsApp\\WinFormsDependencyContainer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T16:23:39.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\MainForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\MainForm.cs",
+              "RelativeToolTip": "WinFormsApp\\MainForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T16:20:34.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IDomainObject.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\IDomainObject.cs",
+              "RelativeDocumentMoniker": "Model\\IDomainObject.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\IDomainObject.cs",
+              "RelativeToolTip": "Model\\IDomainObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T16:18:50.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CourseSqlQueryBuilder.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\CourseSqlQueryBuilder.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\CourseSqlQueryBuilder.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\CourseSqlQueryBuilder.cs",
+              "RelativeToolTip": "DataAccessLayer\\CourseSqlQueryBuilder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T16:13:43.623Z",
+              "EditorCaption": ""
             }
           ]
         }

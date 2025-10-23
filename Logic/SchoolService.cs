@@ -1,60 +1,46 @@
-﻿using System.Text.RegularExpressions;
-using DataAccessLayer;
+﻿using DataAccessLayer;
 using Model;
+using Logic.Validation;
+using Logic.Services;
 
 namespace Logic
 {
     public class SchoolService
     {
         private readonly IRepository<Course> _repository;
-        /// <summary>
-        /// Валидация имени преподавателя
-        /// </summary>
-        /// <param name="teacherName">Имя преподавателя</param>
-        /// <returns>Значение true если имя проходит проверку, иначе false</returns>
-        private bool IsValidTeacherName(string teacherName)
-        {
-            if (string.IsNullOrWhiteSpace(teacherName))
-                return false;
-
-            string pattern = @"^[a-zA-Zа-яА-ЯёЁ\s\-']+$";
-            if (!Regex.IsMatch(teacherName, pattern))
-                return false;
-
-            if (teacherName.StartsWith("-") || teacherName.EndsWith("-") ||
-                teacherName.StartsWith("'") || teacherName.EndsWith("'"))
-                return false;
-
-            if (teacherName.Contains("--") || teacherName.Contains("  "))
-                return false;
-
-            return true;
-        }
-
-        /// <summary>
-        /// Валидация состояния курса
-        /// </summary>
-        /// <param name="status">Состояние(активен или нет)</param>
-        /// <returns>Значение true если статус проходит проверку, иначе false</returns>
-        public bool IsValidIsActive(string status)
-        {
-            if (string.IsNullOrEmpty(status))
-                return false;
-
-            string pattern = @"да|нет";
-            if (Regex.IsMatch(status, pattern))
-                return true;
-
-            return false;
-        }
+        private readonly IValidator<string> _teacherNameValidator;
+        private readonly IValidator<decimal> _priceValidator;
+        private readonly IValidator<int> _durationValidator;
+        private readonly IValidator<string> _statusValidator;
+        private readonly ICourseSearchService _searchService;
+        private readonly ICourseFilterService _filterService;
 
         /// <summary>
         /// Инициализирует новый экземпляр сервиса управления курсами
         /// </summary>
         /// <param name="repository">Репозиторий для работы с курсами</param>
-        public SchoolService(IRepository<Course> repository)
+        /// <param name="teacherNameValidator">Валидатор имени преподавателя</param>
+        /// <param name="priceValidator">Валидатор цены</param>
+        /// <param name="durationValidator">Валидатор продолжительности</param>
+        /// <param name="statusValidator">Валидатор статуса</param>
+        /// <param name="searchService">Сервис поиска курсов</param>
+        /// <param name="filterService">Сервис фильтрации курсов</param>
+        public SchoolService(
+            IRepository<Course> repository,
+            IValidator<string> teacherNameValidator,
+            IValidator<decimal> priceValidator,
+            IValidator<int> durationValidator,
+            IValidator<string> statusValidator,
+            ICourseSearchService searchService,
+            ICourseFilterService filterService)
         {
             _repository = repository;
+            _teacherNameValidator = teacherNameValidator;
+            _priceValidator = priceValidator;
+            _durationValidator = durationValidator;
+            _statusValidator = statusValidator;
+            _searchService = searchService;
+            _filterService = filterService;
         }
 
         /// <summary>
@@ -74,22 +60,22 @@ namespace Logic
         public Course CreateCourse(string courseName, string descripton,
                                    int duration, decimal price, string teacherName, string status)
         {
-            if (price < 0)
+            if (!_priceValidator.IsValid(price))
             {
                 throw new InvalidPriceException(price);
             }
 
-            if (duration < 0)
+            if (!_durationValidator.IsValid(duration))
             {
                 throw new InvalidDurationException(duration);
             }
 
-            if (!IsValidTeacherName(teacherName))
+            if (!_teacherNameValidator.IsValid(teacherName))
             {
                 throw new InvalidTeacherNameException(teacherName);
             }
 
-            if (!IsValidIsActive(status))
+            if (!_statusValidator.IsValid(status))
             {
                 throw new InvalidIsActiveException(status);
             }
@@ -135,22 +121,22 @@ namespace Logic
 
             bool isActive = true;
 
-            if (price < 0)
+            if (!_priceValidator.IsValid(price))
             {
                 throw new InvalidPriceException(price);
             }
 
-            if (duration < 0)
+            if (!_durationValidator.IsValid(duration))
             {
                 throw new InvalidDurationException(duration);
             }
 
-            if (!IsValidTeacherName(teacherName))
+            if (!_teacherNameValidator.IsValid(teacherName))
             {
                 throw new InvalidTeacherNameException(teacherName);
             }
 
-            if (!IsValidIsActive(status))
+            if (!_statusValidator.IsValid(status))
             {
                 throw new InvalidIsActiveException(status);
             }
@@ -179,46 +165,7 @@ namespace Logic
         /// <exception cref="ArgumentException">Выбрасывается если поле поиска пустое или не выбрано ни одного свойства</exception>
         public List<Course> SearchCourses(string searchText, List<string> searchProperties)
         {
-            if (string.IsNullOrEmpty(searchText))
-            {
-                throw new ArgumentException("Поле для поиска не может быть пустым.");
-            }
-
-            if (searchProperties == null || !searchProperties.Any())
-            {
-                throw new ArgumentException("Не выбрано ни одно свойство для поиска");
-            }
-
-            searchText = searchText.Trim();
-
-            var courseType = typeof(Course);
-
-            var fieldNameMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
-            {
-                { "Название", "Name" },
-                { "Преподаватель", "TeacherName" },
-                { "Идентификатор", "Id" }
-            };
-
-            var allCourses = _repository.ReadAll(); 
-            List<Course> filteredCourses = allCourses.Where(course =>
-            {
-                foreach (string searchProperty in searchProperties)
-                {
-                    string actuallyproperty = fieldNameMap[searchProperty];
-                    var property = courseType.GetProperty(actuallyproperty);
-
-                    var value = property.GetValue(course)?.ToString();
-
-                    if (value != null && value.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0)
-                    {
-                        return true;
-                    }
-                }
-                return false;
-            }).ToList();
-
-            return filteredCourses;
+            return _searchService.SearchCourses(searchText, searchProperties);
         }
 
         /// <summary>
@@ -256,10 +203,7 @@ namespace Logic
         /// <returns>List<Course></returns>
         public List<Course> GetActiveCourses()
         {
-            var allCourses = _repository.ReadAll();
-
-            var courseList = allCourses.Where(c => c.IsActive).ToList();
-            return courseList;
+            return _filterService.GetActiveCourses();
         }
 
         /// <summary>
@@ -271,14 +215,7 @@ namespace Logic
         /// <exception cref="InvalidPriceRangeException">Выбрасывается при неверном ценовом диапазоне</exception>
         public List<Course> GetCoursesInPriceRange(decimal minPrice, decimal maxPrice)
         {
-            if (minPrice < 0 || maxPrice < 0 || minPrice > maxPrice)
-            {
-                throw new InvalidPriceRangeException(minPrice, maxPrice);
-            }
-            var allCourses = _repository.ReadAll();
-
-            var filterCourses = allCourses.Where(c => c.Price >= minPrice && c.Price <= maxPrice).ToList();
-            return filterCourses;
+            return _filterService.GetCoursesInPriceRange(minPrice, maxPrice);
         }
 
         /// <summary>

@@ -9,7 +9,7 @@ using SQLitePCL;
 
 namespace DataAccessLayer
 {
-    public class EntityRepository<T> : IRepository<T> where T : class, IDomainObject
+    public class EntityRepository<T> : BaseRepository<T> where T : class, IDomainObject
     {
         private readonly ApplicationDbContext _context;
         private readonly DbSet<T> _dbSet;
@@ -28,8 +28,9 @@ namespace DataAccessLayer
         /// Добавляет новую сущность в базу данных через Entity Framework
         /// </summary>
         /// <param name="entity">Сущность для добавления</param>
-        public void Add(T entity)
+        public override void Add(T entity)
         {
+            ValidateEntity(entity);
             _dbSet.Add(entity);
             _context.SaveChanges();
         }
@@ -38,9 +39,11 @@ namespace DataAccessLayer
         /// Удаляет сущность по идентификатору через Entity Framework
         /// </summary>
         /// <param name="id">Идентификатор сущности для удаления</param>
-        public void Delete(int id)
+        public override void Delete(int id)
         {
             var entity = ReadById(id);
+            if (entity == null)
+                throw new ArgumentException($"Сущность с ID {id} не найдена");
             _dbSet.Remove(entity);
             _context.SaveChanges();
         }
@@ -49,7 +52,7 @@ namespace DataAccessLayer
         /// Возвращает все сущности из базы данных через Entity Framework
         /// </summary>
         /// <returns>Список всех сущностей</returns>
-        public List<T> ReadAll()
+        public override List<T> ReadAll()
         {
             return _dbSet.ToList();
         }
@@ -59,18 +62,18 @@ namespace DataAccessLayer
         /// </summary>
         /// <param name="id">Идентификатор сущности</param>
         /// <returns>Найденная сущность или null, если не найдена</returns>
-        public T ReadById(int id)
+        public override T ReadById(int id)
         {
             return _dbSet.FirstOrDefault(e => e.Id == id);
-                //?? throw new Exception($"Объект с Id={id} не найден");
         }
 
         /// <summary>
         /// Обновляет существующую сущность в базе данных через Entity Framework
         /// </summary>
         /// <param name="entity">Сущность для обновления</param>
-        public void Update(T entity)
+        public override void Update(T entity)
         {
+            ValidateEntity(entity);
             _dbSet.Update(entity);
             _context.SaveChanges();
         }
