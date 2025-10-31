@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System;
 using Logic;
 using Microsoft.EntityFrameworkCore;
-using Model;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal;
 using Microsoft.Identity.Client;
@@ -27,36 +26,11 @@ namespace ConsoleApp
 
             string choiceRepository = Console.ReadLine() ?? "1";
 
-            IRepository<Course> repository;
+            var chooseRep = new ChooseConnection();
 
             // Entity Framework
-            if (choiceRepository == "1")
-            {
-                var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                    .UseSqlServer("Server=DESKTOP-VLCID23\\SQLEXPRESS02;Database=School;Trusted_Connection=True;TrustServerCertificate=True;")
-                    .Options;
-
-                var context = new ApplicationDbContext(options);
-                repository = new EntityRepository<Course>(context);
-
-                Console.WriteLine("\nИспользуется репозиторий Entity Framework.\n");
-            }
-            // Dapper
-            else
-            {
-                IDbConnection connection = new SqlConnection("Server=DESKTOP-VLCID23\\SQLEXPRESS02;Database=School;Trusted_Connection=True;TrustServerCertificate=True;");
-                repository = new DapperRepository<Course>(connection);
-
-                //Заглушка
-                //var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                //   .UseSqlServer("Data Source=courses.db")
-                //   .Options;
-                //var context = new ApplicationDbContext(options);
-                //repository = new EntityRepository<Course>(context);
-
-                Console.WriteLine("\nИспользуется репозиторий Dapper.\n");
-            }
-
+            
+            var repository = chooseRep.chooseRepository(choiceRepository);
             var schoolService = new SchoolService(repository);
             var menuController = new MenuController(schoolService);
 

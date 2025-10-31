@@ -73,6 +73,10 @@
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[9.0.10, )"
+            },
+            "Ninject.MVC5": {
+              "target": "Package",
+              "version": "[3.3.0, )"
             }
           },
           "imports": [
@@ -147,6 +151,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Ninject.MVC5": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -212,6 +222,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Ninject.MVC5": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

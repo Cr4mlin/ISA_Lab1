@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\winformsapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8602BB72-719D-490E-A7A2-18A6111F7D91}|WinFormsApp\\WinFormsApp.csproj|solutionrelative:winformsapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\logic\\chooseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|solutionrelative:logic\\chooseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5052B4AC-AEB7-41D0-B167-D089F3C61F02}|ConsoleApp\\ConsoleApp.csproj|solutionrelative:consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +39,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\MainForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApp\\MainForm.cs",
+              "RelativeToolTip": "WinFormsApp\\MainForm.cs",
+              "ViewState": "AgIAACEBAAAAAAAAAAAuwDMBAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T07:59:18.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\ConsoleApp\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\ConsoleApp\\Program.cs",
+              "RelativeToolTip": "ConsoleApp\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA/wCIAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T07:50:30.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChooseConnection.cs",
+              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\ChooseConnection.cs",
+              "RelativeDocumentMoniker": "Logic\\ChooseConnection.cs",
+              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\ChooseConnection.cs",
+              "RelativeToolTip": "Logic\\ChooseConnection.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T07:50:18.65Z",
+              "EditorCaption": ""
             }
           ]
         }

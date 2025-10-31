@@ -114,3 +114,14 @@ C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\runtime
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\System.Web.Mvc.dll
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\System.Web.Razor.dll
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\System.Web.Helpers.dll
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\System.Web.WebPages.Deployment.dll
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\System.Web.WebPages.Razor.dll
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\System.Web.WebPages.dll
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\Microsoft.Web.Infrastructure.dll
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\Ninject.dll
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\Ninject.Web.Mvc.dll
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\Ninject.Web.Common.dll
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\Ninject.Web.Common.WebHost.dll

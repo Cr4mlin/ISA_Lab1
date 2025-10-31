@@ -2,15 +2,12 @@
 using DataAccessLayer;
 using Logic;
 using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using Model;
 
 namespace WinFormsApp
 {
     public partial class MainForm : Form
     {
         private SchoolService _schoolService;
-        private IRepository<Course> _repository;
 
         /// <summary>
         /// Инициализирует главную форму приложения
@@ -293,22 +290,11 @@ namespace WinFormsApp
                 {
                     string selectedConnection = form.SelectedConnectionType;
 
-                    switch (selectedConnection)
-                    {
-                        case "EntityFrameWork":
-                            var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                            .UseSqlServer("Server=DESKTOP-VLCID23\\SQLEXPRESS02;Database=School;Trusted_Connection=True;TrustServerCertificate=True;")
-                            .Options;
+                    var choiceRepository = new ChooseConnection();
 
-                            var context = new ApplicationDbContext(options);
-                            _repository = new EntityRepository<Course>(context);
-                            break;
-                        case "Dapper":
-                            IDbConnection connection = new SqlConnection("Server=DESKTOP-VLCID23\\SQLEXPRESS02;Database=School;Trusted_Connection=True;TrustServerCertificate=True;");
-                            _repository = new DapperRepository<Course>(connection);
-                            break;
-                    }
-                    _schoolService = new SchoolService(_repository);
+                    var repository = choiceRepository.chooseRepository(selectedConnection);
+
+                    _schoolService = new SchoolService(repository);
 
                     MessageBox.Show($"Вы подключились через: {selectedConnection}");
                     RefreshCoursesList();
