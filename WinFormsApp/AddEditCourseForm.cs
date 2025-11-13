@@ -6,14 +6,14 @@ namespace WinFormsApp
 {
     public partial class AddEditCourseForm : Form
     {
-        private SchoolService _schoolService;
+        private ISchoolService _schoolService;
         private object _existingCourse;
         private bool _isEditMode;
 
         /// <summary>
         /// Инициализирует форму для создания нового курса
         /// </summary>
-        public AddEditCourseForm(SchoolService schoolService)
+        public AddEditCourseForm(ISchoolService schoolService)
         {
             InitializeComponent();
             _schoolService = schoolService;
@@ -25,7 +25,7 @@ namespace WinFormsApp
         /// <summary>
         /// Инициализирует форму для редактирования существующего курса
         /// </summary>
-        public AddEditCourseForm(SchoolService schoolService, object existingCourse)
+        public AddEditCourseForm(ISchoolService schoolService, object existingCourse)
         {
             InitializeComponent();
             _schoolService = schoolService;

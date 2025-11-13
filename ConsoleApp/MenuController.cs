@@ -4,9 +4,9 @@ namespace ConsoleApp
 {
     internal class MenuController
     {
-        private readonly SchoolService _schoolService;
+        private readonly ISchoolService _schoolService;
 
-        public MenuController(SchoolService schoolService)
+        public MenuController(ISchoolService schoolService)
         {
             _schoolService = schoolService;
         }

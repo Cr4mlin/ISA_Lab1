@@ -4,13 +4,13 @@ namespace WinFormsApp
 {
     public partial class PriceRangeForm : Form
     {
-        private SchoolService _schoolService;
+        private ISchoolService _schoolService;
         public List<object> FilteredCourses { get; private set; }
 
         /// <summary>
         /// Инициализирует форму фильтрации по цене
         /// </summary>
-        public PriceRangeForm(SchoolService schoolService)
+        public PriceRangeForm(ISchoolService schoolService)
         {
             InitializeComponent();
             _schoolService = schoolService;

@@ -2,12 +2,13 @@
 using DataAccessLayer;
 using Logic;
 using Microsoft.Data.SqlClient;
+using Ninject;
 
 namespace WinFormsApp
 {
     public partial class MainForm : Form
     {
-        private SchoolService _schoolService;
+        private ISchoolService _schoolService;
 
         /// <summary>
         /// Инициализирует главную форму приложения
@@ -290,11 +291,11 @@ namespace WinFormsApp
                 {
                     string selectedConnection = form.SelectedConnectionType;
 
-                    var choiceRepository = new ChooseConnection();
-
-                    var repository = choiceRepository.chooseRepository(selectedConnection);
-
-                    _schoolService = new SchoolService(repository);
+                    // Создание IoC-контейнера Ninject с модулем конфигурации
+                    IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule(selectedConnection));
+                    
+                    // Получение объекта бизнес-логики через IoC-контейнер
+                    _schoolService = ninjectKernel.Get<ISchoolService>();
 
                     MessageBox.Show($"Вы подключились через: {selectedConnection}");
                     RefreshCoursesList();

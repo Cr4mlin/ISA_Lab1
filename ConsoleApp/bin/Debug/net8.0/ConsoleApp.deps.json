@@ -11,7 +11,7 @@
           "Logic": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.10",
-          "Ninject.MVC5": "3.3.0"
+          "Ninject": "3.3.6"
         },
         "runtime": {
           "ConsoleApp.dll": {}
@@ -49,50 +49,6 @@
           "lib/net8.0/Dapper.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.1.66.48463"
-          }
-        }
-      },
-      "Microsoft.AspNet.Mvc/5.2.3": {
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "3.2.3",
-          "Microsoft.AspNet.WebPages": "3.2.3"
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {
-            "assemblyVersion": "5.2.3.0",
-            "fileVersion": "5.2.30128.0"
-          }
-        }
-      },
-      "Microsoft.AspNet.Razor/3.2.3": {
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.30128.0"
-          }
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.2.3": {
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "3.2.3",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.30128.0"
-          },
-          "lib/net45/System.Web.WebPages.Deployment.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.30128.0"
-          },
-          "lib/net45/System.Web.WebPages.Razor.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.30128.0"
-          },
-          "lib/net45/System.Web.WebPages.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.30128.0"
           }
         }
       },
@@ -513,57 +469,15 @@
           }
         }
       },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.20105.407"
-          }
-        }
-      },
-      "Ninject/3.3.3": {
+      "Ninject/3.3.6": {
         "dependencies": {
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Emit.Lightweight": "4.3.0"
         },
         "runtime": {
           "lib/netstandard2.0/Ninject.dll": {
-            "assemblyVersion": "3.3.3.0",
-            "fileVersion": "3.3.3.0"
-          }
-        }
-      },
-      "Ninject.MVC5/3.3.0": {
-        "dependencies": {
-          "Microsoft.AspNet.Mvc": "5.2.3",
-          "Ninject.Web.Common.WebHost": "3.3.0"
-        },
-        "runtime": {
-          "lib/net45/Ninject.Web.Mvc.dll": {
-            "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.3.0.0"
-          }
-        }
-      },
-      "Ninject.Web.Common/3.3.0": {
-        "dependencies": {
-          "Ninject": "3.3.3"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Ninject.Web.Common.dll": {
-            "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.3.0.0"
-          }
-        }
-      },
-      "Ninject.Web.Common.WebHost/3.3.0": {
-        "dependencies": {
-          "Ninject.Web.Common": "3.3.0"
-        },
-        "runtime": {
-          "lib/net45/Ninject.Web.Common.WebHost.dll": {
-            "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.3.0.0"
+            "assemblyVersion": "3.3.6.0",
+            "fileVersion": "3.3.6.0"
           }
         }
       },
@@ -921,7 +835,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.10",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.10",
           "Model": "1.0.0",
-          "Ninject.MVC5": "3.3.0"
+          "Ninject": "3.3.6"
         },
         "runtime": {
           "DataAccessLayer.dll": {
@@ -933,8 +847,9 @@
       "Logic/1.0.0": {
         "dependencies": {
           "DataAccessLayer": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.10",
           "Model": "1.0.0",
-          "Ninject.MVC5": "3.3.0"
+          "Ninject": "3.3.6"
         },
         "runtime": {
           "Logic.dll": {
@@ -945,7 +860,7 @@
       },
       "Model/1.0.0": {
         "dependencies": {
-          "Ninject.MVC5": "3.3.0"
+          "Ninject": "3.3.6"
         },
         "runtime": {
           "Model.dll": {
@@ -982,27 +897,6 @@
       "sha512": "sha512-/q77jUgDOS+bzkmk3Vy9SiWMaetTw+NOoPAV0xPBsGVAyljd5S6P+4RUW7R3ZUGGr9lDRyPKgAMj2UAOwvqZYw==",
       "path": "dapper/2.1.66",
       "hashPath": "dapper.2.1.66.nupkg.sha512"
-    },
-    "Microsoft.AspNet.Mvc/5.2.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-i8jZf5QrbcFmjiYWRD7o7qTak/oXKxV80MgP4cZ33A8GC0RBtBIdZ1VHaloGUg+qsHUz5rVkGpwenM+ugDz5PA==",
-      "path": "microsoft.aspnet.mvc/5.2.3",
-      "hashPath": "microsoft.aspnet.mvc.5.2.3.nupkg.sha512"
-    },
-    "Microsoft.AspNet.Razor/3.2.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-leta+Q73O7+pR8ThTqXmwaNMSqwZQQ3BHfpUHd8S1XaUWe1jRVLitMHqo1AmY7wPNLyankPA1beiUKEGj8Q3Dw==",
-      "path": "microsoft.aspnet.razor/3.2.3",
-      "hashPath": "microsoft.aspnet.razor.3.2.3.nupkg.sha512"
-    },
-    "Microsoft.AspNet.WebPages/3.2.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-zbtxBERla5RE/mhftwbrXOzc0r6lh8WcnjpGW7QQe+PvSDDx1BgsTUGzfCXO/vJznHNpY5oCSYLt8Q5vUu7F0g==",
-      "path": "microsoft.aspnet.webpages/3.2.3",
-      "hashPath": "microsoft.aspnet.webpages.3.2.3.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
       "type": "package",
@@ -1235,40 +1129,12 @@
       "path": "microsoft.sqlserver.server/1.0.0",
       "hashPath": "microsoft.sqlserver.server.1.0.0.nupkg.sha512"
     },
-    "Microsoft.Web.Infrastructure/1.0.0": {
+    "Ninject/3.3.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
-      "path": "microsoft.web.infrastructure/1.0.0",
-      "hashPath": "microsoft.web.infrastructure.1.0.0.nupkg.sha512"
-    },
-    "Ninject/3.3.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-GdYkRUQwaf3+yhEVDLr1XkPqBUY0sqlnd6YVlMpSujEmazMFPi5o3OlZ9HeCYJUHZvaZfOEyIeVw9xo2cq8u9w==",
-      "path": "ninject/3.3.3",
-      "hashPath": "ninject.3.3.3.nupkg.sha512"
-    },
-    "Ninject.MVC5/3.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-NLmpKSb6OXyWR17NCdeqqpMcvyW2AXlQu5SrICQLXwYYwvCgGX++GfJ3ieeyvjSDkf2q8GihPk6Jhkf+Q0/TPw==",
-      "path": "ninject.mvc5/3.3.0",
-      "hashPath": "ninject.mvc5.3.3.0.nupkg.sha512"
-    },
-    "Ninject.Web.Common/3.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-v7RCQmE7IT3s7zaJQC8vv40ORSzVxxIdoO/iPrfl28dJubJDimrjDTRo7aMTKi7pVXfKiSAEcAva2peJF9sWYw==",
-      "path": "ninject.web.common/3.3.0",
-      "hashPath": "ninject.web.common.3.3.0.nupkg.sha512"
-    },
-    "Ninject.Web.Common.WebHost/3.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-x+ZLbaWElOeCECywQlw4oLoSqu9m6uATiN3fJ7FhJWc49gAYuNlmdFIJWYG2bZT4PsLFxDu5IctXZIeQT0D3aA==",
-      "path": "ninject.web.common.webhost/3.3.0",
-      "hashPath": "ninject.web.common.webhost.3.3.0.nupkg.sha512"
+      "sha512": "sha512-93avazUpbRL3IdwvTQF0DKSQB26TeqwMGhZsQNxi/RLSYewhxBkdGDhwWe9DAIRF1+zKDVMv3XkBk8HobKU6wA==",
+      "path": "ninject/3.3.6",
+      "hashPath": "ninject.3.3.6.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
       "type": "package",

@@ -4,13 +4,13 @@ namespace WinFormsApp
 {
     public partial class SearchForm : Form
     {
-        private SchoolService _schoolService;
+        private ISchoolService _schoolService;
         public List<object> SearchResults { get; private set; }
 
         /// <summary>
         /// Инициализирует форму поиска курсов
         /// </summary>
-        public SearchForm(SchoolService schoolService)
+        public SearchForm(ISchoolService schoolService)
         {
             InitializeComponent();
             _schoolService = schoolService;

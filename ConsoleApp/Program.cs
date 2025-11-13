@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal;
 using Microsoft.Identity.Client;
 using Microsoft.Data.SqlClient;
+using Ninject;
 
 namespace ConsoleApp
 {
@@ -26,12 +27,11 @@ namespace ConsoleApp
 
             string choiceRepository = Console.ReadLine() ?? "1";
 
-            var chooseRep = new ChooseConnection();
-
-            // Entity Framework
+            // Создание IoC-контейнера Ninject с модулем конфигурации
+            IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule(choiceRepository));
             
-            var repository = chooseRep.chooseRepository(choiceRepository);
-            var schoolService = new SchoolService(repository);
+            // Получение объекта бизнес-логики через IoC-контейнер
+            ISchoolService schoolService = ninjectKernel.Get<ISchoolService>();
             var menuController = new MenuController(schoolService);
 
             while (true)

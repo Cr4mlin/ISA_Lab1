@@ -74,9 +74,9 @@
               "target": "Package",
               "version": "[9.0.10, )"
             },
-            "Ninject.MVC5": {
+            "Ninject": {
               "target": "Package",
-              "version": "[3.3.0, )"
+              "version": "[3.3.6, )"
             }
           },
           "imports": [
@@ -145,9 +145,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Ninject.MVC5": {
+            "Ninject": {
               "target": "Package",
-              "version": "[3.3.0, )"
+              "version": "[3.3.6, )"
             }
           },
           "imports": [
