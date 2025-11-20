@@ -1,6 +1,5 @@
-﻿using System.Xml.Linq;
-using Logic;
-using Model;
+﻿using Logic;
+using Logic.Exceptions;
 
 namespace WinFormsApp
 {

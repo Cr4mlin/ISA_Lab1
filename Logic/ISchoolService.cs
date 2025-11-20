@@ -1,3 +1,4 @@
+using Logic.Services;
 using Model;
 
 namespace Logic
@@ -89,6 +90,8 @@ namespace Logic
         /// </summary>
         /// <param name="courseId">Идентификатор курса</param>
         void ToggleCourseStatus(int courseId);
+
+        void ExportCourses(List<object> courses, string filePath, ExportFormat format);
     }
 }
 

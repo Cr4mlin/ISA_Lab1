@@ -1,6 +1,7 @@
 using DataAccessLayer;
 using Logic.Validators;
 using Model;
+using Logic.Exceptions;
 
 namespace Logic.Services
 {

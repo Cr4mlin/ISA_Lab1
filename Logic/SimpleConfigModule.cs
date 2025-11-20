@@ -9,6 +9,7 @@ using Logic.Converters;
 using Logic.Search;
 using Logic.Services;
 using Logic.Factories;
+using Logic.Export;
 
 namespace Logic
 {
@@ -79,10 +80,15 @@ namespace Logic
             // Регистрация сервисов поиска
             Bind<ICourseSearchService>().To<CourseSearchService>().InSingletonScope();
 
+            // Регистрация стратегий экспорта
+            Bind<PdfExportStrategy>().ToSelf().InSingletonScope();
+            Bind<ExcelExportStrategy>().ToSelf().InSingletonScope();
+
             // Регистрация специализированных сервисов
             Bind<ICourseManagementService>().To<CourseManagementService>().InTransientScope();
             Bind<ICourseQueryService>().To<CourseQueryService>().InTransientScope();
             Bind<ICourseFilterService>().To<CourseFilterService>().InTransientScope();
+            Bind<ICourseExportService>().To<CourseExportService>().InSingletonScope();
 
             // Регистрация SchoolService (фасад)
             Bind<ISchoolService>().To<SchoolService>().InTransientScope();

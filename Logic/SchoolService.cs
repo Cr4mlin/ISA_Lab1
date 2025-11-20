@@ -14,6 +14,7 @@ namespace Logic
         private readonly ICourseQueryService _queryService;
         private readonly ICourseFilterService _filterService;
         private readonly ICourseSearchService _searchService;
+        private readonly ICourseExportService _exportService;
 
         /// <summary>
         /// Инициализирует новый экземпляр сервиса управления курсами
@@ -26,12 +27,14 @@ namespace Logic
             ICourseManagementService managementService,
             ICourseQueryService queryService,
             ICourseFilterService filterService,
-            ICourseSearchService searchService)
+            ICourseSearchService searchService,
+            ICourseExportService exportService)
         {
             _managementService = managementService ?? throw new ArgumentNullException(nameof(managementService));
             _queryService = queryService ?? throw new ArgumentNullException(nameof(queryService));
             _filterService = filterService ?? throw new ArgumentNullException(nameof(filterService));
             _searchService = searchService ?? throw new ArgumentNullException(nameof(searchService));
+            _exportService = exportService ?? throw new ArgumentNullException(nameof(exportService));
         }
 
         /// <summary>
@@ -139,6 +142,11 @@ namespace Logic
         public void ToggleCourseStatus(int courseId)
         {
             _managementService.ToggleCourseStatus(courseId);
+        }
+
+        public void ExportCourses(List<object> courses, string filePath, ExportFormat format)
+        {
+            _exportService.ExportCourses(courses, filePath, format);
         }
     }
 }

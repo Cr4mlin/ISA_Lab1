@@ -1,3 +1,5 @@
+using Logic.Exceptions;
+
 namespace Logic.Validators
 {
     /// <summary>

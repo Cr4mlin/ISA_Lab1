@@ -1,6 +1,8 @@
 ﻿using System.Data;
 using DataAccessLayer;
 using Logic;
+using Logic.Services;
+using Logic.Exceptions;
 using Microsoft.Data.SqlClient;
 using Ninject;
 
@@ -34,7 +36,7 @@ namespace WinFormsApp
                 MessageBox.Show($"Ошибка при загрузке курсов: {ex.Message}", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-}
+        }
 
         /// <summary>
         /// Настраивает отображение колонок в DataGridView
@@ -182,7 +184,7 @@ namespace WinFormsApp
                         }
                     }
                 }
-            }   
+            }
             else
             {
                 MessageBox.Show("Выберите курс для удаления", "Информация",
@@ -293,7 +295,7 @@ namespace WinFormsApp
 
                     // Создание IoC-контейнера Ninject с модулем конфигурации
                     IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule(selectedConnection));
-                    
+
                     // Получение объекта бизнес-логики через IoC-контейнер
                     _schoolService = ninjectKernel.Get<ISchoolService>();
 
@@ -312,6 +314,96 @@ namespace WinFormsApp
             btnEditCourse.Enabled = hasSelection;
             btnDeleteCourse.Enabled = hasSelection;
             btnToggleStatus.Enabled = hasSelection;
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            var currentCourses = GetCurrentDisplayedCourses();
+
+            if (currentCourses == null || currentCourses.Count == 0)
+            {
+                MessageBox.Show("Нет курсов для экспорта", "Информация",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Диалог сохранения файла со всеми форматами
+            using (var saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "PDF файлы (*.pdf)|*.pdf|Excel файлы (*.xlsx)|*.xlsx";
+                saveDialog.FilterIndex = 1; // По умолчанию PDF
+                saveDialog.FileName = $"courses_{DateTime.Now:yyyyMMdd_HHmmss}";
+                saveDialog.Title = "Экспорт курсов";
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Определяем формат по выбранному фильтру
+                        ExportFormat selectedFormat = saveDialog.FilterIndex switch
+                        {
+                            1 => ExportFormat.PDF,
+                            2 => ExportFormat.Excel,
+                            _ => ExportFormat.PDF
+                        };
+
+                        _schoolService.ExportCourses(currentCourses, saveDialog.FileName, selectedFormat);
+
+                        MessageBox.Show($"Курсы успешно экспортированы в файл:\n{saveDialog.FileName}\n\nВсего записей: {currentCourses.Count}",
+                            "Экспорт завершен",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    catch (EmptyCoursesListException ex)
+                    {
+                        MessageBox.Show(ex.Message, "Предупреждение",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    catch (InvalidFilePathException ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (InvalidExportFormatException ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (ExportException ex)
+                    {
+                        MessageBox.Show($"Ошибка при экспорте курсов: {ex.Message}", "Ошибка",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Непредвиденная ошибка: {ex.Message}", "Ошибка",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private List<object> GetCurrentDisplayedCourses()
+        {
+            var courses = new List<object>();
+
+            if (dataGridViewCourses.DataSource is IEnumerable<object> courseList)
+            {
+                courses = courseList.ToList();
+            }
+            else if (dataGridViewCourses.DataSource != null)
+            {
+                // Обработка других типов источников данных
+                foreach (DataGridViewRow row in dataGridViewCourses.Rows)
+                {
+                    if (row.DataBoundItem != null)
+                    {
+                        courses.Add(row.DataBoundItem);
+                    }
+                }
+            }
+
+            return courses;
         }
     }
 }

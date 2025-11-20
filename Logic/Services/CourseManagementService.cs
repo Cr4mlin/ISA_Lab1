@@ -1,6 +1,7 @@
 using DataAccessLayer;
 using Logic.Factories;
 using Model;
+using Logic.Exceptions;
 
 namespace Logic.Services
 {

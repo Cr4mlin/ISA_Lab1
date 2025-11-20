@@ -32,6 +32,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel3 = new TableLayoutPanel();
             btnSelectConnection = new Button();
+            btnExport = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCourses).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -167,6 +168,7 @@
             tableLayoutPanel3.Controls.Add(btnAddCourse, 0, 0);
             tableLayoutPanel3.Controls.Add(btnEditCourse, 1, 0);
             tableLayoutPanel3.Controls.Add(btnSearch, 0, 1);
+            tableLayoutPanel3.Controls.Add(btnExport, 1, 2);
             tableLayoutPanel3.Location = new Point(3, 381);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 3;
@@ -185,6 +187,17 @@
             btnSelectConnection.TabIndex = 4;
             btnSelectConnection.Text = "Выбрать тип подключения";
             btnSelectConnection.Click += btnSelectConnection_Click;
+            // 
+            // btnExport
+            // 
+            btnExport.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnExport.Location = new Point(223, 94);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(214, 36);
+            btnExport.TabIndex = 5;
+            btnExport.Text = "Экспортировать";
+            btnExport.UseVisualStyleBackColor = true;
+            btnExport.Click += btnExport_Click;
             // 
             // MainForm
             // 
@@ -207,5 +220,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel3;
         private Button btnSelectConnection;
+        private Button btnExport;
     }
 }
