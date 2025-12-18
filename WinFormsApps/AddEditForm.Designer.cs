@@ -44,6 +44,7 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             btnSave = new Controls.Buttons();
             btnCancel = new Controls.Buttons();
+            panelTop = new Panel();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCourseDuration).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCourseValue).BeginInit();
@@ -284,12 +285,21 @@
             btnCancel.TextColor = Color.White;
             btnCancel.UseVisualStyleBackColor = false;
             // 
+            // panelTop
+            // 
+            panelTop.Dock = DockStyle.Top;
+            panelTop.Location = new Point(0, 0);
+            panelTop.Name = "panelTop";
+            panelTop.Size = new Size(800, 20);
+            panelTop.TabIndex = 8;
+            // 
             // AddEditForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(panelTop);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AddEditForm";
@@ -320,5 +330,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Controls.Buttons btnSave;
         private Controls.Buttons btnCancel;
+        private Panel panelTop;
     }
 }

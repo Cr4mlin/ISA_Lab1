@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
 using Shared;
 using Shared.DTO;
 using FontAwesome.Sharp;
@@ -72,7 +68,6 @@ namespace WinFormsApps
         public event EventHandler? ExportRequested;
         public event EventHandler? LoadAvatarRequested;
         public event EventHandler ChangeAvatarRequested;
-        public event EventHandler? DeleteAvatarRequested;
 
         // Методы IAdminView
         public void DisplayCourses(IEnumerable<CourseDto> courses)
@@ -184,13 +179,6 @@ namespace WinFormsApps
 
                 return null;
             }
-        }
-
-        public bool ConfirmDeleteAvatar()
-        {
-            var result = MessageBox.Show("Вы уверены, что хотите удалить аватар?",
-                "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            return result == DialogResult.Yes;
         }
 
         private void OpenCoursesForm()

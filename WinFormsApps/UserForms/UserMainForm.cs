@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
 using Shared;
 using Shared.DTO;
 using FontAwesome.Sharp;
@@ -63,7 +59,6 @@ namespace WinFormsApps
         public event EventHandler<string>? SearchCoursesRequested;
         public event EventHandler? ViewAllCoursesRequested;
         public event EventHandler? ChangeAvatarRequested;
-        public event EventHandler? DeleteAvatarRequested;
         public event EventHandler? LoadAvatarRequested;
         public event EventHandler<Image>? AvatarImageProvided;
 

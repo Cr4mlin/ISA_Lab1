@@ -1,24 +1,22 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Shared.DTO;
 
 namespace WinFormsApps
 {
     public partial class AddEditForm : Form
     {
+        private bool _dragging = false;
+        private Point _dragCursorPoint;
+        private Point _dragFormPoint;
         public CourseDto? CourseData { get; private set; }
 
         public AddEditForm()
         {
             InitializeComponent();
             InitializeForm();
+
+            panelTop.MouseDown += Panel_MouseDown;
+            panelTop.MouseMove += Panel_MouseMove;
+            panelTop.MouseUp += Panel_MouseUp;
         }
 
         public AddEditForm(CourseDto course) : this()
@@ -99,5 +97,17 @@ namespace WinFormsApps
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void Panel_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left) { _dragging = true; _dragCursorPoint = Cursor.Position; _dragFormPoint = this.Location; }
+        }
+
+        private void Panel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_dragging) this.Location = Point.Add(_dragFormPoint, new Size(Point.Subtract(Cursor.Position, new Size(_dragCursorPoint))));
+        }
+
+        private void Panel_MouseUp(object sender, MouseEventArgs e) => _dragging = false;
     }
 }
