@@ -1,18 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\",
+  "WorkspaceRootPath": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D4AE24F9-D6EA-4358-84F1-B096700DE625}|Presenter\\Presenter.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\presenter\\userpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4AE24F9-D6EA-4358-84F1-B096700DE625}|Presenter\\Presenter.csproj|solutionrelative:presenter\\userpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4AE24F9-D6EA-4358-84F1-B096700DE625}|Presenter\\Presenter.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\presenter\\adminpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D4AE24F9-D6EA-4358-84F1-B096700DE625}|Presenter\\Presenter.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab\\presenter\\adminpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4AE24F9-D6EA-4358-84F1-B096700DE625}|Presenter\\Presenter.csproj|solutionrelative:presenter\\adminpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\logic\\services\\avatarsevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96E26430-20EB-46A7-BBC7-350C24C3EDAF}|Logic\\Logic.csproj|solutionrelative:logic\\services\\avatarsevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6385CC9F-0608-4759-9D3F-C69639837AF0}|WinFormsApps\\WinFormsApps.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab\\winformsapps\\ownerforms\\ownermainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6385CC9F-0608-4759-9D3F-C69639837AF0}|WinFormsApps\\WinFormsApps.csproj|solutionrelative:winformsapps\\ownerforms\\ownermainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6385CC9F-0608-4759-9D3F-C69639837AF0}|WinFormsApps\\WinFormsApps.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab\\winformsapps\\ownerforms\\ownercoursesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6385CC9F-0608-4759-9D3F-C69639837AF0}|WinFormsApps\\WinFormsApps.csproj|solutionrelative:winformsapps\\ownerforms\\ownercoursesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4AE24F9-D6EA-4358-84F1-B096700DE625}|Presenter\\Presenter.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab\\presenter\\userpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4AE24F9-D6EA-4358-84F1-B096700DE625}|Presenter\\Presenter.csproj|solutionrelative:presenter\\userpresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3D2CA2-2F87-43C0-AE8F-1D32FC8A7D14}|Shared\\Shared.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab\\shared\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3D2CA2-2F87-43C0-AE8F-1D32FC8A7D14}|Shared\\Shared.csproj|solutionrelative:shared\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3D2CA2-2F87-43C0-AE8F-1D32FC8A7D14}|Shared\\Shared.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab\\shared\\dto\\dtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3D2CA2-2F87-43C0-AE8F-1D32FC8A7D14}|Shared\\Shared.csproj|solutionrelative:shared\\dto\\dtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3D2CA2-2F87-43C0-AE8F-1D32FC8A7D14}|Shared\\Shared.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\\source\\repos\\information-system-arhitecture\\isa_lab\\shared\\dto\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3D2CA2-2F87-43C0-AE8F-1D32FC8A7D14}|Shared\\Shared.csproj|solutionrelative:shared\\dto\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,54 +46,92 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "UserPresenter.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Presenter\\UserPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Presenter\\UserPresenter.cs",
               "RelativeDocumentMoniker": "Presenter\\UserPresenter.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Presenter\\UserPresenter.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Presenter\\UserPresenter.cs",
               "RelativeToolTip": "Presenter\\UserPresenter.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAwwIoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T22:05:34.038Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminPresenter.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Presenter\\AdminPresenter.cs",
-              "RelativeDocumentMoniker": "Presenter\\AdminPresenter.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Presenter\\AdminPresenter.cs",
-              "RelativeToolTip": "Presenter\\AdminPresenter.cs",
-              "ViewState": "AgIAACwBAAAAAAAAAIAwwDcBAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T22:01:50.537Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T17:10:30.628Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AvatarSevice.cs",
-              "DocumentMoniker": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\Services\\AvatarSevice.cs",
-              "RelativeDocumentMoniker": "Logic\\Services\\AvatarSevice.cs",
-              "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\Services\\AvatarSevice.cs",
-              "RelativeToolTip": "Logic\\Services\\AvatarSevice.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAgwDsAAAA3AAAAAAAAAA==",
+              "Title": "OwnerCoursesForm.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\WinFormsApps\\OwnerForms\\OwnerCoursesForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApps\\OwnerForms\\OwnerCoursesForm.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\WinFormsApps\\OwnerForms\\OwnerCoursesForm.cs",
+              "RelativeToolTip": "WinFormsApps\\OwnerForms\\OwnerCoursesForm.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T22:01:11.907Z",
+              "WhenOpened": "2025-12-11T17:02:33.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OwnerMainForm.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\WinFormsApps\\OwnerForms\\OwnerMainForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApps\\OwnerForms\\OwnerMainForm.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\WinFormsApps\\OwnerForms\\OwnerMainForm.cs",
+              "RelativeToolTip": "WinFormsApps\\OwnerForms\\OwnerMainForm.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAwwNIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T16:58:41.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Presenter\\AdminPresenter.cs",
+              "RelativeDocumentMoniker": "Presenter\\AdminPresenter.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Presenter\\AdminPresenter.cs",
+              "RelativeToolTip": "Presenter\\AdminPresenter.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAcwJEAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T16:43:54.869Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Shared\\DTO\\UserDto.cs",
+              "RelativeDocumentMoniker": "Shared\\DTO\\UserDto.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Shared\\DTO\\UserDto.cs",
+              "RelativeToolTip": "Shared\\DTO\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T16:43:20.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DtoMapper.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Shared\\DTO\\DtoMapper.cs",
+              "RelativeDocumentMoniker": "Shared\\DTO\\DtoMapper.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Shared\\DTO\\DtoMapper.cs",
+              "RelativeToolTip": "Shared\\DTO\\DtoMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T16:43:20.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CourseDto.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Shared\\DTO\\CourseDto.cs",
+              "RelativeDocumentMoniker": "Shared\\DTO\\CourseDto.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Shared\\DTO\\CourseDto.cs",
+              "RelativeToolTip": "Shared\\DTO\\CourseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T16:43:18.862Z"
             }
           ]
         }

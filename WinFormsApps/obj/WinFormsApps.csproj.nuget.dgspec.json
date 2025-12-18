@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApps\\WinFormsApps.csproj": {}
+    "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\WinFormsApps\\WinFormsApps.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\Maxim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\DataAccessLayer\\DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\Арсен\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Арсен\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Model.csproj"
+              "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Model\\Model.csproj"
               }
             }
           }
@@ -48,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -95,25 +91,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\Logic.csproj": {
+    "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Logic\\Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\Logic.csproj",
+        "projectUniqueName": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Logic\\Logic.csproj",
         "projectName": "Logic",
-        "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\Logic.csproj",
-        "packagesPath": "C:\\Users\\Maxim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\obj\\",
+        "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Logic\\Logic.csproj",
+        "packagesPath": "C:\\Users\\Арсен\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Logic\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Арсен\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -127,11 +119,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Model.csproj"
+              "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Model\\Model.csproj"
               }
             }
           }
@@ -146,7 +138,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -189,25 +181,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Model.csproj": {
+    "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\Maxim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\obj\\",
+        "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\Арсен\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Model\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Арсен\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -233,7 +221,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -260,25 +248,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Shared\\Shared.csproj": {
+    "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\Maxim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\Арсен\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Арсен\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -292,8 +276,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Model.csproj"
+              "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Model\\Model.csproj"
               }
             }
           }
@@ -308,7 +292,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -335,25 +319,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApps\\WinFormsApps.csproj": {
+    "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\WinFormsApps\\WinFormsApps.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApps\\WinFormsApps.csproj",
+        "projectUniqueName": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\WinFormsApps\\WinFormsApps.csproj",
         "projectName": "WinFormsApps",
-        "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApps\\WinFormsApps.csproj",
-        "packagesPath": "C:\\Users\\Maxim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WinFormsApps\\obj\\",
+        "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\WinFormsApps\\WinFormsApps.csproj",
+        "packagesPath": "C:\\Users\\Арсен\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\WinFormsApps\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Арсен\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -367,17 +347,17 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\Logic.csproj": {
-                "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Logic\\Logic.csproj"
+              "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Logic\\Logic.csproj": {
+                "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Logic\\Logic.csproj"
               },
-              "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Model\\Model.csproj"
+              "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Model\\Model.csproj"
               },
-              "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\Shared\\Shared.csproj"
+              "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\Арсен\\source\\repos\\Information-system-arhitecture\\ISA_Lab\\Shared\\Shared.csproj"
               }
             }
           }
@@ -392,7 +372,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -430,7 +410,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
