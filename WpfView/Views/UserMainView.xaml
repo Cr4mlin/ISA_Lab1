@@ -1,0 +1,109 @@
+<local:BaseView x:Class="WpfView.Views.UserMainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfView.Views"
+        Title="Главная - Пользователь" Height="600" Width="900"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Шапка -->
+        <Border Grid.Row="0" Background="#FA88E6" Padding="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Аватарка -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,0,15,0">
+                    <Border Width="50" Height="50" CornerRadius="25"
+                            BorderBrush="White" BorderThickness="2"
+                            Background="White">
+                        <Image x:Name="AvatarImage" Stretch="UniformToFill">
+                            <Image.Clip>
+                                <EllipseGeometry Center="25,25" RadiusX="23" RadiusY="23"/>
+                            </Image.Clip>
+                        </Image>
+                    </Border>
+                    <Button Content="Изменить" VerticalAlignment="Center" Margin="10,0,0,0"
+                            Click="ChangeAvatar_Click" Height="30" Width="80"/>
+                </StackPanel>
+
+                <TextBlock Grid.Column="1"
+                           Text="{Binding NickName, StringFormat='Добро пожаловать, {0}!'}"
+                           FontSize="18" FontWeight="Bold" Foreground="White"
+                           VerticalAlignment="Center"/>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock Text="Поиск курсов:" VerticalAlignment="Center"
+                               Foreground="White" Margin="0,0,10,0"/>
+                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                             Width="200"
+                             VerticalAlignment="Center"
+                             FontSize="14"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Основной контент -->
+        <TabControl Grid.Row="1" Margin="10" SelectionChanged="TabControl_SelectionChanged">
+            <!-- Вкладка "Все курсы" -->
+            <TabItem Header="Все курсы" x:Name="AllCoursesTab">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <DataGrid Grid.Row="0"
+                              ItemsSource="{Binding Courses}"
+                              SelectedItem="{Binding SelectedCourse}"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="*"/>
+                            <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="2*"/>
+                            <DataGridTextColumn Header="Длительность" Binding="{Binding Duration}" Width="100"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Price, StringFormat='{}{0:N2}'}" Width="100"/>
+                            <DataGridTextColumn Header="Преподаватель" Binding="{Binding TeacherName}" Width="150"/>
+                            <DataGridCheckBoxColumn Header="Активен" Binding="{Binding IsActive}" Width="80"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Button Grid.Row="1" Content="Купить курс"
+                            Width="150" Height="35" Margin="10"
+                            HorizontalAlignment="Right"
+                            Command="{Binding PurchaseCourseCommand}"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Вкладка "Купленные курсы" -->
+            <TabItem Header="Купленные курсы" x:Name="PurchasedCoursesTab">
+                <DataGrid ItemsSource="{Binding PurchasedCourses}"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          SelectionMode="Single">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="*"/>
+                        <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="2*"/>
+                        <DataGridTextColumn Header="Длительность" Binding="{Binding Duration}" Width="100"/>
+                        <DataGridTextColumn Header="Цена" Binding="{Binding Price, StringFormat='{}{0:N2}'}" Width="100"/>
+                        <DataGridTextColumn Header="Преподаватель" Binding="{Binding TeacherName}" Width="150"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+
+        <!-- Статус бар -->
+        <StatusBar Grid.Row="2">
+            <TextBlock Text="{Binding UserName, StringFormat='Пользователь: {0}'}"/>
+        </StatusBar>
+    </Grid>
+</local:BaseView>
