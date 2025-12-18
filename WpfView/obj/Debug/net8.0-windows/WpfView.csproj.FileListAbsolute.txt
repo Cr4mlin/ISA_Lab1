@@ -2,6 +2,7 @@ C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\WpfView.csp
 C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\Views\AdminMainView.baml
 C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\Views\LoginView.baml
 C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\Views\UserMainView.baml
+C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\Views\AdminMainView.g.cs
 C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\Views\LoginView.g.cs
 C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\Views\UserMainView.g.cs
@@ -174,6 +175,7 @@ C:\Users\Maxim\source\repos\Lab1_S3\WpfView\bin\Debug\net8.0-windows\DataAccessL
 C:\Users\Maxim\source\repos\Lab1_S3\WpfView\bin\Debug\net8.0-windows\Model.pdb
 C:\Users\Maxim\source\repos\Lab1_S3\WpfView\bin\Debug\net8.0-windows\WinFormsApps.pdb
 C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\App.baml
+C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\WpfView.g.resources
 C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\WpfView.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Maxim\source\repos\Lab1_S3\WpfView\obj\Debug\net8.0-windows\WpfView.AssemblyInfoInputs.cache

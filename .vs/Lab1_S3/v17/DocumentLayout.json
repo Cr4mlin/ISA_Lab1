@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B1E24DC4-DE71-492D-830C-1275AA24EB9C}|WpfView\\WpfView.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\wpfview\\views\\adminmainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B1E24DC4-DE71-492D-830C-1275AA24EB9C}|WpfView\\WpfView.csproj|solutionrelative:wpfview\\views\\adminmainview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WpfView\\Views\\AdminMainView.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WpfView\\Views\\AdminMainView.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1E24DC4-DE71-492D-830C-1275AA24EB9C}|WpfView\\WpfView.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\wpfview\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1E24DC4-DE71-492D-830C-1275AA24EB9C}|WpfView\\WpfView.csproj|solutionrelative:wpfview\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WpfView\\AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WpfView\\AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1E24DC4-DE71-492D-830C-1275AA24EB9C}|WpfView\\WpfView.csproj|c:\\users\\maxim\\source\\repos\\lab1_s3\\wpfview\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B1E24DC4-DE71-492D-830C-1275AA24EB9C}|WpfView\\WpfView.csproj|solutionrelative:wpfview\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WpfView\\App.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WpfView\\App.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -48,8 +48,9 @@
               "RelativeDocumentMoniker": "WpfView\\Views\\AdminMainView.xaml",
               "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WpfView\\Views\\AdminMainView.xaml",
               "RelativeToolTip": "WpfView\\Views\\AdminMainView.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-18T17:03:13.146Z",
+              "WhenOpened": "2025-12-18T17:12:06.701Z",
               "EditorCaption": ""
             },
             {
@@ -62,8 +63,7 @@
               "RelativeToolTip": "WpfView\\AssemblyInfo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T16:52:47.978Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-18T17:12:06.719Z"
             },
             {
               "$type": "Document",
@@ -74,8 +74,7 @@
               "ToolTip": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WpfView\\App.xaml",
               "RelativeToolTip": "WpfView\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-18T16:52:40.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-18T17:12:06.722Z"
             }
           ]
         }

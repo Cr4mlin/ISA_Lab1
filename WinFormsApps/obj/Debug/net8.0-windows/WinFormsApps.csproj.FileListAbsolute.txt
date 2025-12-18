@@ -110,4 +110,3 @@ C:\Data\Study\ISA\Lab1_S3\WinFormsApps\obj\Debug\net8.0-windows\WinFormsApps.dll
 C:\Data\Study\ISA\Lab1_S3\WinFormsApps\obj\Debug\net8.0-windows\refint\WinFormsApps.dll
 C:\Data\Study\ISA\Lab1_S3\WinFormsApps\obj\Debug\net8.0-windows\WinFormsApps.pdb
 C:\Data\Study\ISA\Lab1_S3\WinFormsApps\obj\Debug\net8.0-windows\ref\WinFormsApps.dll
-C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApps\obj\Debug\net8.0-windows\WinFormsApps.ConfimForm.resources

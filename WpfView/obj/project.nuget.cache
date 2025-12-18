@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MwQtPbA8R6w=",
+  "dgSpecHash": "Z8mi7dqVyPE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Maxim\\source\\repos\\Lab1_S3\\WpfView\\WpfView.csproj",
+  "projectFilePath": "C:\\Data\\Study\\ISA\\Lab1_S3\\WpfView\\WpfView.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Maxim\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Maxim\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

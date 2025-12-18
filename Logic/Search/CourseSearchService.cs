@@ -19,7 +19,8 @@ namespace Logic.Search
             {
                 { "Название", "Name" },
                 { "Преподаватель", "TeacherName" },
-                { "Идентификатор", "Id" }
+                { "Идентификатор", "Id" },
+                { "Описание", "Description" }
             };
         }
 
@@ -50,8 +51,12 @@ namespace Logic.Search
             {
                 foreach (string searchProperty in searchProperties)
                 {
-                    if (!_fieldNameMap.TryGetValue(searchProperty, out string? actualProperty))
-                        continue;
+                    // Попробуем сначала найти маппинг (для русских названий)
+                    string actualProperty = searchProperty;
+                    if (_fieldNameMap.TryGetValue(searchProperty, out string? mappedProperty))
+                    {
+                        actualProperty = mappedProperty;
+                    }
 
                     var property = courseType.GetProperty(actualProperty);
                     if (property == null)

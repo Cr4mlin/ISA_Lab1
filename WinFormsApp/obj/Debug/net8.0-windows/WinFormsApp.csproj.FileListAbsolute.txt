@@ -173,3 +173,8 @@ C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinForm
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.genruntimeconfig.cache
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\ref\WinFormsApp.dll
 c:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.LoginForm.resources
+c:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
+c:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\Shared.dll
+c:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\WinFormsApps.dll
+c:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\WinFormsApps.pdb
+c:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\bin\Debug\net8.0-windows\Shared.pdb

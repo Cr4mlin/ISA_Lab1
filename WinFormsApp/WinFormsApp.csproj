@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Logic\Logic.csproj" />
+    <ProjectReference Include="..\WinFormsApps\WinFormsApps.csproj" />
   </ItemGroup>
 
 </Project>

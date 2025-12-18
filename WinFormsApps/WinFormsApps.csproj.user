@@ -4,9 +4,6 @@
     <Compile Update="AddEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ConfimForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Controls\Buttons.cs">
       <SubType>Component</SubType>
     </Compile>
