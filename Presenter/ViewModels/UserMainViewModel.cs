@@ -114,7 +114,7 @@ namespace Presenter.ViewModels
             catch (Exception ex)
             {
                 // Логирование ошибки
-                Console.WriteLine($"Ошибка загрузки информации о пользователе: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Ошибка загрузки информации о пользователе: {ex.Message}");
             }
         }
 
@@ -133,7 +133,7 @@ namespace Presenter.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка загрузки курсов: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Ошибка загрузки курсов: {ex.Message}");
             }
         }
 
@@ -152,7 +152,7 @@ namespace Presenter.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка загрузки купленных курсов: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Ошибка загрузки купленных курсов: {ex.Message}");
             }
         }
 
@@ -249,12 +249,12 @@ namespace Presenter.ViewModels
 
             try
             {
-                var image = System.Drawing.Image.FromFile(imagePath);
+                var image = Image.FromFile(imagePath);
                 _schoolService.SaveAvatar(_currentUserId, image);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка изменения аватара: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Ошибка изменения аватара: {ex.Message}");
             }
         }
     }

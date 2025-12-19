@@ -76,7 +76,7 @@ namespace Presenter.ViewModels
 
         public int CurrentUserId => _currentUserId;
 
-        public System.Drawing.Image? GetAvatar()
+        public Image? GetAvatar()
         {
             try
             {
@@ -122,7 +122,7 @@ namespace Presenter.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка загрузки информации о пользователе: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Ошибка загрузки информации о пользователе: {ex.Message}");
             }
         }
 
@@ -141,7 +141,7 @@ namespace Presenter.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка загрузки курсов: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Ошибка загрузки курсов: {ex.Message}");
             }
         }
 
@@ -160,7 +160,7 @@ namespace Presenter.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка загрузки пользователей: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Ошибка загрузки пользователей: {ex.Message}");
             }
         }
 
@@ -212,7 +212,7 @@ namespace Presenter.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка изменения статуса курса: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Ошибка изменения статуса курса: {ex.Message}");
             }
         }
 
@@ -368,12 +368,12 @@ namespace Presenter.ViewModels
 
             try
             {
-                var image = System.Drawing.Image.FromFile(imagePath);
+                var image = Image.FromFile(imagePath);
                 _schoolService.SaveAvatar(_currentUserId, image);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка изменения аватара: {ex.Message}");
+                System.Diagnostics.Debug.WriteLine($"Ошибка изменения аватара: {ex.Message}");
             }
         }
     }
